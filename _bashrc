@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# interactive?
+[ -z "$PS1" ] && return
+
+PS1="\[\e[0;35m\]\u@\H \[\e[1;31m\]\w \[\e[0;35m\]\$\[\e[0m\] "
+PS2="\[\e[0;35m\]>\[\e[0m\]"
+
+# bash options ---------------------
+shopt -s histappend
+shopt -s cmdhist
+shopt -s checkwinsize
+
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias ls='ls --color=auto'
+alias ll='ls -l'
+alias df='df -h'
+alias ..='cd ..'
+
+alias ryerson='ssh mclair@moon.scs.ryerson.ca'
+
+complete -cf man
+complete -cf sudo
+
+HISTCONTROL=ignoredupes:ignorespace
+HISTSIZE=12000
+
+export EDITOR=vim
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/java/bin:/opt/java/db/bin:/opt/java/jre/bin:/usr/bin/core_perl:/home/canadarox/bin::
+if [ "$TERM" = "rxvt-unicode-256color" ]
+then
+	TERM=rxvt-unicode
+fi
+
+bind "i":forward-char
+bind "n":next-history
+bind "e":previous-history
+bind "l":vi-insertion-mode
+bind "A":insert-beg
+
+set -o vi

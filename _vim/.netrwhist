@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/canadarox/.wicd'
+let g:netrw_dirhist_2='/home/canadarox/.rdesktop'
+let g:netrw_dirhist_3='/home/canadarox/.rdesktop/cache'
+let g:netrw_dirhist_4='/home/canadarox/.rdesktop'
+let g:netrw_dirhist_5='/home/canadarox'
+let g:netrw_dirhist_6='/home/canadarox/.irssi'

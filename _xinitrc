@@ -1,0 +1,34 @@
+#!/bin/bash
+# set colemak keyboard layout
+setxkbmap us -variant colemak &
+
+# load colours and magic
+xrdb -merge ~/.Xresources
+
+# add terminus to font path
+xset +fp /usr/share/fonts/local 
+xset fp rehash &
+
+# enable ctrl+alt+backspace
+setxkbmap -option terminate:ctrl_alt_bksp &
+
+# disable mouse when typing
+syndaemon -t -k -i 2 -d &
+unclutter -idle 5 &
+
+# enable palm detection
+xinput set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Palm Detection" 1
+
+# start xsetroot stuff
+~/.scripts/infobar/looper.sh &
+
+# slow down the mouse
+xset m 1 1 &
+
+# start urxvt daemon
+/usr/bin/urxvtd -q -o -f &
+
+# 0.9 gamma
+xgamma -gamma 0.9
+
+exec dwm
