@@ -49,14 +49,3 @@ noremap     [l     [i
 noremap     [L     [I
 noremap     ]l     ]i
 noremap     ]L     ]I
-
-" The nops are used to hide the old keys so as to remove temptations to
-" confuse oneself by using a mixture of old and new.
-
-" The langmap will disturb other mappings, but it gives an easy overview of
-" what the above mappings do:
-"
-" set langmap=kn,KN,nj,NJ,je,JE,ek,EK,li,LI,il,IL
-
-nnoremap ; :|
-xnoremap ; :|
