@@ -158,6 +158,591 @@ syn keyword	cStorageClass	static const stock native forward
 " ======
 syn keyword 	cConstant 	cellbits cellmax cellmin charbits charmax charmin ucharmax __Pawn debug
 syn keyword 	cConstant 	true false
+
+" admin.inc
+syn keyword	cFunction	DumpAdminCache AddCommandOverride GetCommandOverride UnsetCommandOverride
+syn keyword	cFunction	CreateAdmGroup FindAdmGroup SetAdmGroupAddFlag GetAdmGroupAddFlag
+syn keyword	cFunction	GetAdmGroupAddFlags SetAdmGroupImmunity GetAdmGroupImmunity SetAdmGroupImmuneFrom
+syn keyword	cFunction	GetAdmGroupImmuneCount GetAdmGroupImmuneFrom AddAdmGroupCmdOverride GetAdmGroupCmdOverride
+syn keyword	cFunction	RegisterAuthIdentType CreateAdmin GetAdminUsername BindAdminIdentity
+syn keyword	cFunction	SetAdminFlag GetAdminFlag GetAdminFlags AdminInheritGroup
+syn keyword	cFunction	GetAdminGroupCount GetAdminGroup SetAdminPassword GetAdminPassword
+syn keyword	cFunction	FindAdminByIdentity RemoveAdmin FlagBitsToBitArray FlagBitArrayToBits
+syn keyword	cFunction	FlagArrayToBits FlagBitsToArray FindFlagByName FindFlagByChar
+syn keyword	cFunction	ReadFlagString CanAdminTarget CreateAuthMethod SetAdmGroupImmunityLevel
+syn keyword	cFunction	GetAdmGroupImmunityLevel SetAdminImmunityLevel GetAdminImmunityLevel FlagToBit
+syn keyword	cFunction	BitToFlag   
+syn keyword	cConstant	Admin_Reservation Admin_Generic Admin_Kick Admin_Ban
+syn keyword	cConstant	Admin_Unban Admin_Slay Admin_Changemap Admin_Convars
+syn keyword	cConstant	Admin_Config Admin_Chat Admin_Vote Admin_Password
+syn keyword	cConstant	Admin_RCON Admin_Cheats Admin_Root Admin_Custom1
+syn keyword	cConstant	Admin_Custom2 Admin_Custom3 Admin_Custom4 Admin_Custom5
+syn keyword	cConstant	Admin_Custom6 AdminFlags_TOTAL ADMFLAG_RESERVATION ADMFLAG_GENERIC
+syn keyword	cConstant	ADMFLAG_KICK ADMFLAG_BAN ADMFLAG_UNBAN ADMFLAG_SLAY
+syn keyword	cConstant	ADMFLAG_CHANGEMAP ADMFLAG_CONVARS ADMFLAG_CONFIG ADMFLAG_CHAT
+syn keyword	cConstant	ADMFLAG_VOTE ADMFLAG_PASSWORD ADMFLAG_RCON ADMFLAG_CHEATS
+syn keyword	cConstant	ADMFLAG_ROOT ADMFLAG_CUSTOM1 ADMFLAG_CUSTOM2 ADMFLAG_CUSTOM3
+syn keyword	cConstant	ADMFLAG_CUSTOM4 ADMFLAG_CUSTOM5 ADMFLAG_CUSTOM6 AUTHMETHOD_STEAM
+syn keyword	cConstant	AUTHMETHOD_IP AUTHMETHOD_NAME Override_Command Override_CommandGroup
+syn keyword	cConstant	Command_Deny Command_Allow Immunity_Default Immunity_Global
+syn keyword	cConstant	INVALID_GROUP_ID INVALID_ADMIN_ID Access_Real Access_Effective
+syn keyword	cConstant	AdminCache_Overrides AdminCache_Groups AdminCache_Admins 
+syn keyword	cTag		AdminFlag OverrideType OverrideRule ImmunityType
+syn keyword	cTag		GroupId AdminId AdmAccessMode AdminCachePart
+syn keyword	cForward	OnRebuildAdminCache   
+
+" adminmenu.inc
+syn keyword	cFunction	GetAdminTopMenu AddTargetsToMenu AddTargetsToMenu2 RedisplayAdminMenu
+syn keyword	cConstant	ADMINMENU_PLAYERCOMMANDS ADMINMENU_SERVERCOMMANDS ADMINMENU_VOTINGCOMMANDS 
+syn keyword	cForward	OnAdminMenuCreated OnAdminMenuReady  
+
+" adt.inc
+
+" adt_array.inc
+syn keyword	cFunction	ByteCountToCells CreateArray ClearArray CloneArray
+syn keyword	cFunction	ResizeArray GetArraySize PushArrayCell PushArrayString
+syn keyword	cFunction	PushArrayArray GetArrayCell GetArrayString GetArrayArray
+syn keyword	cFunction	SetArrayCell SetArrayString SetArrayArray ShiftArrayUp
+syn keyword	cFunction	RemoveFromArray SwapArrayItems FindStringInArray FindValueInArray
+
+" adt_stack.inc
+syn keyword	cFunction	CreateStack PushStackCell PushStackString PushStackArray
+syn keyword	cFunction	PopStackCell PopStackString PopStackArray IsStackEmpty
+syn keyword	cFunction	PopStack   
+
+" adt_trie.inc
+syn keyword	cFunction	CreateTrie SetTrieValue SetTrieArray SetTrieString
+syn keyword	cFunction	GetTrieValue GetTrieArray GetTrieString RemoveFromTrie
+syn keyword	cFunction	ClearTrie GetTrieSize  
+
+" banning.inc
+syn keyword	cFunction	BanClient BanIdentity RemoveBan 
+syn keyword	cConstant	BANFLAG_AUTO BANFLAG_IP BANFLAG_AUTHID BANFLAG_NOKICK
+syn keyword	cForward	OnBanClient OnBanIdentity OnRemoveBan 
+
+" bitbuffer.inc
+syn keyword	cFunction	BfWriteBool BfWriteByte BfWriteChar BfWriteShort
+syn keyword	cFunction	BfWriteWord BfWriteNum BfWriteFloat BfWriteString
+syn keyword	cFunction	BfWriteEntity BfWriteAngle BfWriteCoord BfWriteVecCoord
+syn keyword	cFunction	BfWriteVecNormal BfWriteAngles BfReadBool BfReadByte
+syn keyword	cFunction	BfReadChar BfReadShort BfReadWord BfReadNum
+syn keyword	cFunction	BfReadFloat BfReadString BfReadEntity BfReadAngle
+syn keyword	cFunction	BfReadCoord BfReadVecCoord BfReadVecNormal BfReadAngles
+syn keyword	cFunction	BfGetNumBytesLeft   
+
+" clientprefs.inc
+syn keyword	cFunction	RegClientCookie FindClientCookie SetClientCookie GetClientCookie
+syn keyword	cFunction	AreClientCookiesCached SetCookiePrefabMenu SetCookieMenuItem ShowCookieMenu
+syn keyword	cFunction	GetCookieIterator ReadCookieIterator GetCookieAccess 
+syn keyword	cConstant	CookieAccess_Public CookieAccess_Protected CookieAccess_Private CookieMenu_YesNo
+syn keyword	cConstant	CookieMenu_YesNo_Int CookieMenu_OnOff CookieMenu_OnOff_Int CookieMenuAction_DisplayOption
+syn keyword	cConstant	CookieMenuAction_SelectOption   
+syn keyword	cTag		CookieAccess CookieMenu CookieMenuAction CookieMenuHandler
+syn keyword	cForward	OnClientCookiesCached   
+
+" clients.inc
+syn keyword	cFunction	GetMaxClients GetClientCount GetClientName GetClientIP
+syn keyword	cFunction	GetClientAuthString GetClientUserId IsClientConnected IsClientInGame
+syn keyword	cFunction	IsClientInKickQueue IsPlayerInGame IsClientAuthorized IsFakeClient
+syn keyword	cFunction	IsClientObserver IsPlayerAlive GetClientInfo GetClientTeam
+syn keyword	cFunction	SetUserAdmin GetUserAdmin AddUserFlags RemoveUserFlags
+syn keyword	cFunction	SetUserFlagBits GetUserFlagBits CanUserTarget RunAdminCacheChecks
+syn keyword	cFunction	NotifyPostAdminCheck CreateFakeClient SetFakeClientConVar GetClientHealth
+syn keyword	cFunction	GetClientModel GetClientWeapon GetClientMaxs GetClientMins
+syn keyword	cFunction	GetClientAbsAngles GetClientAbsOrigin GetClientArmor GetClientDeaths
+syn keyword	cFunction	GetClientFrags GetClientDataRate IsClientTimingOut GetClientTime
+syn keyword	cFunction	GetClientLatency GetClientAvgLatency GetClientAvgLoss GetClientAvgChoke
+syn keyword	cFunction	GetClientAvgData GetClientAvgPackets GetClientOfUserId KickClient
+syn keyword	cFunction	KickClientEx ChangeClientTeam GetClientSerial GetClientFromSerial
+syn keyword	cConstant	NetFlow_Outgoing NetFlow_Incoming NetFlow_Both MAXPLAYERS
+syn keyword	cConstant	MAX_NAME_LENGTH MaxClients  
+syn keyword	cTag		NetFlow   
+syn keyword	cForward	OnClientConnect OnClientConnected OnClientPutInServer OnClientDisconnect
+syn keyword	cForward	OnClientDisconnect_Post OnClientCommand OnClientSettingsChanged OnClientAuthorized
+syn keyword	cForward	OnClientPreAdminCheck OnClientPostAdminFilter OnClientPostAdminCheck 
+
+" commandfilters.inc
+syn keyword	cFunction	ProcessTargetString ReplyToTargetError  
+syn keyword	cConstant	MAX_TARGET_LENGTH COMMAND_FILTER_ALIVE COMMAND_FILTER_DEAD COMMAND_FILTER_CONNECTED
+syn keyword	cConstant	COMMAND_FILTER_NO_IMMUNITY COMMAND_FILTER_NO_MULTI COMMAND_FILTER_NO_BOTS COMMAND_TARGET_NONE
+syn keyword	cConstant	COMMAND_TARGET_NOT_ALIVE COMMAND_TARGET_NOT_DEAD COMMAND_TARGET_NOT_IN_GAME COMMAND_TARGET_IMMUNE
+syn keyword	cConstant	COMMAND_TARGET_EMPTY_FILTER COMMAND_TARGET_NOT_HUMAN COMMAND_TARGET_AMBIGUOUS 
+
+" console.inc
+syn keyword	cFunction	ServerCommand InsertServerCommand ServerExecute ClientCommand
+syn keyword	cFunction	FakeClientCommand FakeClientCommandEx PrintToServer PrintToConsole
+syn keyword	cFunction	ReplyToCommand GetCmdReplySource SetCmdReplySource IsChatTrigger
+syn keyword	cFunction	ShowActivity2 ShowActivity ShowActivityEx FormatActivitySource
+syn keyword	cFunction	RegServerCmd RegConsoleCmd RegAdminCmd GetCmdArgs
+syn keyword	cFunction	GetCmdArg GetCmdArgString CreateConVar FindConVar
+syn keyword	cFunction	HookConVarChange UnhookConVarChange GetConVarBool SetConVarBool
+syn keyword	cFunction	GetConVarInt SetConVarInt GetConVarFloat SetConVarFloat
+syn keyword	cFunction	GetConVarString SetConVarString ResetConVar GetConVarFlags
+syn keyword	cFunction	SetConVarFlags GetConVarBounds SetConVarBounds GetConVarName
+syn keyword	cFunction	QueryClientConVar GetCommandIterator ReadCommandIterator CheckCommandAccess
+syn keyword	cFunction	IsValidConVarChar GetCommandFlags SetCommandFlags FindFirstConCommand
+syn keyword	cFunction	FindNextConCommand SendConVarValue AddServerTag RemoveServerTag
+syn keyword	cConstant	INVALID_FCVAR_FLAGS ConVarBound_Upper ConVarBound_Lower QUERYCOOKIE_FAILED
+syn keyword	cConstant	SM_REPLY_TO_CONSOLE SM_REPLY_TO_CHAT ConVarQuery_Okay ConVarQuery_NotFound
+syn keyword	cConstant	ConVarQuery_NotValid ConVarQuery_Protected FCVAR_NONE FCVAR_UNREGISTERED
+syn keyword	cConstant	FCVAR_LAUNCHER FCVAR_GAMEDLL FCVAR_CLIENTDLL FCVAR_MATERIAL_SYSTEM
+syn keyword	cConstant	FCVAR_PROTECTED FCVAR_SPONLY FCVAR_ARCHIVE FCVAR_NOTIFY
+syn keyword	cConstant	FCVAR_USERINFO FCVAR_PRINTABLEONLY FCVAR_UNLOGGED FCVAR_NEVER_AS_STRING
+syn keyword	cConstant	FCVAR_REPLICATED FCVAR_CHEAT FCVAR_STUDIORENDER FCVAR_DEMO
+syn keyword	cConstant	FCVAR_DONTRECORD FCVAR_PLUGIN FCVAR_DATACACHE FCVAR_TOOLSYSTEM
+syn keyword	cConstant	FCVAR_FILESYSTEM FCVAR_NOT_CONNECTED FCVAR_SOUNDSYSTEM FCVAR_ARCHIVE_XBOX
+syn keyword	cConstant	FCVAR_INPUTSYSTEM FCVAR_NETWORKSYSTEM FCVAR_VPHYSICS 
+syn keyword	cTag		ConVarBounds QueryCookie ReplySource ConVarQueryResult
+syn keyword	cTag		SrvCmd ConCmd ConVarChanged ConVarQueryFinished
+
+" core.inc
+syn keyword	cFunction	VerifyCoreVersion   
+syn keyword	cConstant	SOURCEMOD_PLUGINAPI_VERSION Plugin_Continue Plugin_Changed Plugin_Handled
+syn keyword	cConstant	Plugin_Stop Identity_Core Identity_Extension Identity_Plugin
+syn keyword	cConstant	Plugin_Running Plugin_Paused Plugin_Error Plugin_Loaded
+syn keyword	cConstant	Plugin_Failed Plugin_Created Plugin_Uncompiled Plugin_BadLoad
+syn keyword	cConstant	PlInfo_Name PlInfo_Author PlInfo_Description PlInfo_Version
+syn keyword	cConstant	PlInfo_URL NULL_VECTOR NULL_STRING 
+syn keyword	cTag		PlVers Function Action Identity
+syn keyword	cTag		PluginStatus PluginInfo Extension SharedPlugin
+
+" cstrike.inc
+syn keyword	cFunction	CS_RespawnPlayer CS_SwitchTeam  
+syn keyword	cConstant	CS_TEAM_NONE CS_TEAM_SPECTATOR CS_TEAM_T CS_TEAM_CT
+syn keyword	cConstant	CS_SLOT_PRIMARY CS_SLOT_SECONDARY CS_SLOT_GRENADE CS_SLOT_C4
+
+" datapack.inc
+syn keyword	cFunction	CreateDataPack WritePackCell WritePackFloat WritePackString
+syn keyword	cFunction	ReadPackCell ReadPackFloat ReadPackString ResetPack
+syn keyword	cFunction	GetPackPosition SetPackPosition IsPackReadable 
+
+" dbi.inc
+syn keyword	cFunction	SQL_Connect SQL_DefConnect SQL_ConnectCustom SQLite_UseDatabase
+syn keyword	cFunction	SQL_ConnectEx SQL_CheckConfig SQL_GetDriver SQL_ReadDriver
+syn keyword	cFunction	SQL_GetDriverIdent SQL_GetDriverProduct SQL_GetAffectedRows SQL_GetInsertId
+syn keyword	cFunction	SQL_GetError SQL_EscapeString SQL_QuoteString SQL_FastQuery
+syn keyword	cFunction	SQL_Query SQL_PrepareQuery SQL_FetchMoreResults SQL_HasResultSet
+syn keyword	cFunction	SQL_GetRowCount SQL_GetFieldCount SQL_FieldNumToName SQL_FieldNameToNum
+syn keyword	cFunction	SQL_FetchRow SQL_MoreRows SQL_Rewind SQL_FetchString
+syn keyword	cFunction	SQL_FetchFloat SQL_FetchInt SQL_IsFieldNull SQL_FetchSize
+syn keyword	cFunction	SQL_BindParamInt SQL_BindParamFloat SQL_BindParamString SQL_Execute
+syn keyword	cFunction	SQL_LockDatabase SQL_UnlockDatabase SQL_IsSameConnection SQL_TConnect
+syn keyword	cFunction	SQL_TQuery   
+syn keyword	cConstant	DBVal_Error DBVal_TypeMismatch DBVal_Null DBVal_Data
+syn keyword	cConstant	DBBind_Int DBBind_Float DBBind_String DBPrio_High
+syn keyword	cConstant	DBPrio_Normal DBPrio_Low  
+syn keyword	cTag		DBResult DBBindType DBPriority SQLTCallback
+
+" entity.inc
+syn keyword	cFunction	GetMaxEntities GetEntityCount IsValidEntity IsValidEdict
+syn keyword	cFunction	IsEntNetworkable CreateEdict RemoveEdict GetEdictFlags
+syn keyword	cFunction	SetEdictFlags GetEdictClassname GetEntityNetClass ChangeEdictState
+syn keyword	cFunction	GetEntData SetEntData GetEntDataFloat SetEntDataFloat
+syn keyword	cFunction	GetEntDataEnt SetEntDataEnt GetEntDataEnt2 SetEntDataEnt2
+syn keyword	cFunction	GetEntDataVector SetEntDataVector GetEntDataString SetEntDataString
+syn keyword	cFunction	FindSendPropOffs FindSendPropInfo FindDataMapOffs GetEntSendPropOffs
+syn keyword	cFunction	GetEntProp SetEntProp GetEntPropFloat SetEntPropFloat
+syn keyword	cFunction	GetEntPropEnt SetEntPropEnt GetEntPropVector SetEntPropVector
+syn keyword	cFunction	GetEntPropString SetEntPropString GetEntDataArray SetEntDataArray
+syn keyword	cConstant	Prop_Send Prop_Data FL_EDICT_CHANGED FL_EDICT_FREE
+syn keyword	cConstant	FL_EDICT_FULL FL_EDICT_FULLCHECK FL_EDICT_ALWAYS FL_EDICT_DONTSEND
+syn keyword	cConstant	FL_EDICT_PVSCHECK FL_EDICT_PENDING_DORMANT_CHECK FL_EDICT_DIRTY_PVS_INFORMATION FL_FULL_EDICT_CHANGED
+syn keyword	cConstant	PropField_Unsupported PropField_Integer PropField_Float PropField_Entity
+syn keyword	cConstant	PropField_Vector PropField_String PropField_String_T 
+syn keyword	cTag		PropType PropFieldType  
+
+" entity_prop_stocks.inc
+syn keyword	cFunction	GetEntityFlags GetEntityMoveType SetEntityMoveType GetEntityRenderMode
+syn keyword	cFunction	SetEntityRenderMode GetEntityRenderFx SetEntityRenderFx SetEntityRenderColor
+syn keyword	cFunction	GetEntityGravity SetEntityGravity SetEntityHealth GetClientButtons
+syn keyword	cConstant	MOVETYPE_NONE MOVETYPE_ISOMETRIC MOVETYPE_WALK MOVETYPE_STEP
+syn keyword	cConstant	MOVETYPE_FLY MOVETYPE_FLYGRAVITY MOVETYPE_VPHYSICS MOVETYPE_PUSH
+syn keyword	cConstant	MOVETYPE_NOCLIP MOVETYPE_LADDER MOVETYPE_OBSERVER MOVETYPE_CUSTOM
+syn keyword	cConstant	RENDER_NORMAL RENDER_TRANSCOLOR RENDER_TRANSTEXTURE RENDER_GLOW
+syn keyword	cConstant	RENDER_TRANSALPHA RENDER_TRANSADD RENDER_ENVIRONMENTAL RENDER_TRANSADDFRAMEBLEND
+syn keyword	cConstant	RENDER_TRANSALPHAADD RENDER_WORLDGLOW RENDER_NONE RENDERFX_NONE
+syn keyword	cConstant	RENDERFX_PULSE_SLOW RENDERFX_PULSE_FAST RENDERFX_PULSE_SLOW_WIDE RENDERFX_PULSE_FAST_WIDE
+syn keyword	cConstant	RENDERFX_FADE_SLOW RENDERFX_FADE_FAST RENDERFX_SOLID_SLOW RENDERFX_SOLID_FAST
+syn keyword	cConstant	RENDERFX_STROBE_SLOW RENDERFX_STROBE_FAST RENDERFX_STROBE_FASTER RENDERFX_FLICKER_SLOW
+syn keyword	cConstant	RENDERFX_FLICKER_FAST RENDERFX_NO_DISSIPATION RENDERFX_DISTORT RENDERFX_HOLOGRAM
+syn keyword	cConstant	RENDERFX_EXPLODE RENDERFX_GLOWSHELL RENDERFX_CLAMP_MIN_SCALE RENDERFX_ENV_RAIN
+syn keyword	cConstant	RENDERFX_ENV_SNOW RENDERFX_SPOTLIGHT RENDERFX_RAGDOLL RENDERFX_PULSE_FAST_WIDER
+syn keyword	cConstant	RENDERFX_MAX IN_ATTACK IN_JUMP IN_DUCK
+syn keyword	cConstant	IN_FORWARD IN_BACK IN_USE IN_CANCEL
+syn keyword	cConstant	IN_LEFT IN_RIGHT IN_MOVELEFT IN_MOVERIGHT
+syn keyword	cConstant	IN_ATTACK2 IN_RUN IN_RELOAD IN_ALT1
+syn keyword	cConstant	IN_ALT2 IN_SCORE IN_SPEED IN_WALK
+syn keyword	cConstant	IN_ZOOM IN_WEAPON1 IN_WEAPON2 IN_BULLRUSH
+syn keyword	cConstant	IN_GRENADE1 IN_GRENADE2 FL_ONGROUND FL_DUCKING
+syn keyword	cConstant	FL_WATERJUMP FL_ONTRAIN FL_INRAIN FL_FROZEN
+syn keyword	cConstant	FL_ATCONTROLS FL_CLIENT FL_FAKECLIENT PLAYER_FLAG_BITS
+syn keyword	cConstant	FL_INWATER FL_FLY FL_SWIM FL_CONVEYOR
+syn keyword	cConstant	FL_NPC FL_GODMODE FL_NOTARGET FL_AIMTARGET
+syn keyword	cConstant	FL_PARTIALGROUND FL_STATICPROP FL_GRAPHED FL_GRENADE
+syn keyword	cConstant	FL_STEPMOVEMENT FL_DONTTOUCH FL_BASEVELOCITY FL_WORLDBRUSH
+syn keyword	cConstant	FL_OBJECT FL_KILLME FL_ONFIRE FL_DISSOLVING
+syn keyword	cConstant	FL_TRANSRAGDOLL FL_UNBLOCKABLE_BY_PLAYER  
+syn keyword	cTag		MoveType RenderMode RenderFx 
+
+" events.inc
+syn keyword	cFunction	HookEvent HookEventEx UnhookEvent CreateEvent
+syn keyword	cFunction	FireEvent CancelCreatedEvent GetEventBool SetEventBool
+syn keyword	cFunction	GetEventInt SetEventInt GetEventFloat SetEventFloat
+syn keyword	cFunction	GetEventString SetEventString GetEventName 
+syn keyword	cConstant	EventHookMode_Pre EventHookMode_Post EventHookMode_PostNoCopy 
+syn keyword	cTag		EventHookMode EventHook  
+
+" files.inc
+syn keyword	cFunction	BuildPath OpenDirectory ReadDirEntry OpenFile
+syn keyword	cFunction	DeleteFile ReadFileLine ReadFile ReadFileString
+syn keyword	cFunction	WriteFile WriteFileString WriteFileLine ReadFileCell
+syn keyword	cFunction	WriteFileCell IsEndOfFile FileSeek FilePosition
+syn keyword	cFunction	FileExists RenameFile DirExists FileSize
+syn keyword	cFunction	FlushFile RemoveDir CreateDirectory GetFileTime
+syn keyword	cFunction	LogToOpenFile LogToOpenFileEx  
+syn keyword	cConstant	FileType_Unknown FileType_Directory FileType_File FileTime_LastAccess
+syn keyword	cConstant	FileTime_Created FileTime_LastChange PLATFORM_MAX_PATH SEEK_SET
+syn keyword	cConstant	SEEK_CUR SEEK_END Path_SM FPERM_U_READ
+syn keyword	cConstant	FPERM_U_WRITE FPERM_U_EXEC FPERM_G_READ FPERM_G_WRITE
+syn keyword	cConstant	FPERM_G_EXEC FPERM_O_READ FPERM_O_WRITE FPERM_O_EXEC
+syn keyword	cTag		FileType FileTimeMode PathType 
+
+" float.inc
+syn keyword	cFunction	float FloatMul FloatDiv FloatAdd
+syn keyword	cFunction	FloatSub FloatFraction RoundToZero RoundToCeil
+syn keyword	cFunction	RoundToFloor RoundToNearest FloatCompare SquareRoot
+syn keyword	cFunction	Pow Exponential Logarithm Sine
+syn keyword	cFunction	Cosine Tangent FloatAbs ArcTangent
+syn keyword	cFunction	ArcCosine ArcSine ArcTangent2 RoundFloat
+syn keyword	cFunction	DegToRad RadToDeg  
+syn keyword	cConstant	FLOAT_PI   
+
+" functions.inc
+syn keyword	cFunction	GetFunctionByName CreateGlobalForward CreateForward GetForwardFunctionCount
+syn keyword	cFunction	AddToForward RemoveFromForward RemoveAllFromForward Call_StartForward
+syn keyword	cFunction	Call_StartFunction Call_PushCell Call_PushCellRef Call_PushFloat
+syn keyword	cFunction	Call_PushFloatRef Call_PushArray Call_PushArrayEx Call_PushString
+syn keyword	cFunction	Call_PushStringEx Call_Finish Call_Cancel CreateNative
+syn keyword	cFunction	ThrowNativeError GetNativeStringLength GetNativeString SetNativeString
+syn keyword	cFunction	GetNativeCell GetNativeCellRef SetNativeCellRef GetNativeArray
+syn keyword	cFunction	SetNativeArray FormatNativeString  
+syn keyword	cConstant	SP_PARAMFLAG_BYREF Param_Any Param_Cell Param_Float
+syn keyword	cConstant	Param_String Param_Array Param_VarArgs Param_CellByRef
+syn keyword	cConstant	Param_FloatByRef ET_Ignore ET_Single ET_Event
+syn keyword	cConstant	ET_Hook SM_PARAM_COPYBACK SM_PARAM_STRING_UTF8 SM_PARAM_STRING_COPY
+syn keyword	cConstant	SM_PARAM_STRING_BINARY SP_ERROR_NONE SP_ERROR_FILE_FORMAT SP_ERROR_DECOMPRESSOR
+syn keyword	cConstant	SP_ERROR_HEAPLOW SP_ERROR_PARAM SP_ERROR_INVALID_ADDRESS SP_ERROR_NOT_FOUND
+syn keyword	cConstant	SP_ERROR_INDEX SP_ERROR_STACKLOW SP_ERROR_NOTDEBUGGING SP_ERROR_INVALID_INSTRUCTION
+syn keyword	cConstant	SP_ERROR_MEMACCESS SP_ERROR_STACKMIN SP_ERROR_HEAPMIN SP_ERROR_DIVIDE_BY_ZERO
+syn keyword	cConstant	SP_ERROR_ARRAY_BOUNDS SP_ERROR_INSTRUCTION_PARAM SP_ERROR_STACKLEAK SP_ERROR_HEAPLEAK
+syn keyword	cConstant	SP_ERROR_ARRAY_TOO_BIG SP_ERROR_TRACKER_BOUNDS SP_ERROR_INVALID_NATIVE SP_ERROR_PARAMS_MAX
+syn keyword	cConstant	SP_ERROR_NATIVE SP_ERROR_NOT_RUNNABLE SP_ERROR_ABORTED 
+syn keyword	cTag		ParamType ExecType NativeCall 
+
+" geoip.inc
+syn keyword	cFunction	GeoipCode2 GeoipCode3 GeoipCountry 
+
+" halflife.inc
+syn keyword	cFunction	LogToGame SetRandomSeed GetRandomFloat GetRandomInt
+syn keyword	cFunction	IsMapValid IsDedicatedServer GetEngineTime GetGameTime
+syn keyword	cFunction	GetGameDescription GetGameFolderName GetCurrentMap PrecacheModel
+syn keyword	cFunction	PrecacheSentenceFile PrecacheDecal PrecacheGeneric IsModelPrecached
+syn keyword	cFunction	IsDecalPrecached IsGenericPrecached PrecacheSound IsSoundPrecached
+syn keyword	cFunction	CreateDialog GuessSDKVersion PrintToChat PrintToChatAll
+syn keyword	cFunction	PrintCenterText PrintCenterTextAll PrintHintText PrintHintTextToAll
+syn keyword	cFunction	ShowVGUIPanel CreateHudSynchronizer SetHudTextParams SetHudTextParamsEx
+syn keyword	cFunction	ShowSyncHudText ClearSyncHud ShowHudText ShowMOTDPanel
+syn keyword	cFunction	DisplayAskConnectBox   
+syn keyword	cConstant	SOURCE_SDK_UNKNOWN SOURCE_SDK_ORIGINAL SOURCE_SDK_DARKMESSIAH SOURCE_SDK_EPISODE1
+syn keyword	cConstant	SOURCE_SDK_EPISODE2 SOURCE_SDK_LEFT4DEAD MOTDPANEL_TYPE_TEXT MOTDPANEL_TYPE_INDEX
+syn keyword	cConstant	MOTDPANEL_TYPE_URL MOTDPANEL_TYPE_FILE DialogType_Msg DialogType_Menu
+syn keyword	cConstant	DialogType_Text DialogType_Entry DialogType_AskConnect 
+syn keyword	cTag		DialogType   
+
+" handles.inc
+syn keyword	cFunction	CloseHandle CloneHandle IsValidHandle 
+syn keyword	cConstant	INVALID_HANDLE   
+syn keyword	cTag		Handle   
+
+" helpers.inc
+syn keyword	cFunction	FormatUserLogText FindPluginByFile SearchForClients FindTarget
+syn keyword	cFunction	LoadMaps   
+
+" keyvalues.inc
+syn keyword	cFunction	CreateKeyValues KvSetString KvSetNum KvSetUInt64
+syn keyword	cFunction	KvSetFloat KvSetColor KvSetVector KvGetString
+syn keyword	cFunction	KvGetNum KvGetFloat KvGetColor KvGetUInt64
+syn keyword	cFunction	KvGetVector KvJumpToKey KvJumpToKeySymbol KvGotoFirstSubKey
+syn keyword	cFunction	KvGotoNextKey KvSavePosition KvDeleteKey KvDeleteThis
+syn keyword	cFunction	KvGoBack KvRewind KvGetSectionName KvSetSectionName
+syn keyword	cFunction	KvGetDataType KeyValuesToFile FileToKeyValues KvSetEscapeSequences
+syn keyword	cFunction	KvNodesInStack KvCopySubkeys KvFindKeyById KvGetNameSymbol
+syn keyword	cFunction	KvGetSectionSymbol   
+syn keyword	cConstant	KvData_None KvData_String KvData_Int KvData_Float
+syn keyword	cConstant	KvData_Ptr KvData_WString KvData_Color KvData_UInt64
+syn keyword	cConstant	KvData_NUMTYPES   
+syn keyword	cTag		KvDataTypes   
+
+" lang.inc
+syn keyword	cFunction	LoadTranslations SetGlobalTransTarget GetClientLanguage GetServerLanguage
+syn keyword	cFunction	GetLanguageCount GetLanguageInfo  
+syn keyword	cConstant	LANG_SERVER   
+
+" logging.inc
+syn keyword	cFunction	LogMessage LogMessageEx LogToFile LogToFileEx
+syn keyword	cFunction	LogAction LogError AddGameLogHook RemoveGameLogHook
+syn keyword	cTag		GameLogHook   
+syn keyword	cForward	OnLogAction   
+
+" mapchooser.inc
+syn keyword	cFunction	NominateMap GetExcludeMapList CanMapChooserStartVote InitiateMapChooserVote
+syn keyword	cFunction	HasEndOfMapVoteFinished EndOfMapVoteEnabled  
+syn keyword	cConstant	Nominate_Added Nominate_Replaced Nominate_AlreadyInVote Nominate_InvalidMap
+syn keyword	cConstant	Nominate_VoteFull MapChange_Instant MapChange_RoundEnd MapChange_MapEnd
+syn keyword	cTag		NominateResult MapChange  
+syn keyword	cForward	OnNominationRemoved   
+
+" menus.inc
+syn keyword	cFunction	CreateMenu DisplayMenu DisplayMenuAtItem AddMenuItem
+syn keyword	cFunction	InsertMenuItem RemoveMenuItem RemoveAllMenuItems GetMenuItem
+syn keyword	cFunction	GetMenuSelectionPosition GetMenuItemCount SetMenuPagination GetMenuPagination
+syn keyword	cFunction	GetMenuStyle SetMenuTitle GetMenuTitle CreatePanelFromMenu
+syn keyword	cFunction	GetMenuExitButton SetMenuExitButton GetMenuExitBackButton SetMenuExitBackButton
+syn keyword	cFunction	CancelMenu GetMenuOptionFlags SetMenuOptionFlags IsVoteInProgress
+syn keyword	cFunction	CancelVote VoteMenu VoteMenuToAll SetVoteResultCallback
+syn keyword	cFunction	CheckVoteDelay IsClientInVotePool RedrawClientVoteMenu GetMenuStyleHandle
+syn keyword	cFunction	CreatePanel CreateMenuEx GetClientMenu CancelClientMenu
+syn keyword	cFunction	GetMaxPageItems GetPanelStyle SetPanelTitle DrawPanelItem
+syn keyword	cFunction	DrawPanelText CanPanelDrawFlags SetPanelKeys SendPanelToClient
+syn keyword	cFunction	GetPanelTextRemaining GetPanelCurrentKey SetPanelCurrentKey RedrawMenuItem
+syn keyword	cFunction	InternalShowMenu GetMenuVoteInfo IsNewVoteAllowed 
+syn keyword	cConstant	MenuStyle_Default MenuStyle_Valve MenuStyle_Radio MenuAction_Start
+syn keyword	cConstant	MenuAction_Display MenuAction_Select MenuAction_Cancel MenuAction_End
+syn keyword	cConstant	MenuAction_VoteEnd MenuAction_VoteStart MenuAction_VoteCancel MenuAction_DrawItem
+syn keyword	cConstant	MenuAction_DisplayItem MENU_ACTIONS_DEFAULT MENU_ACTIONS_ALL MENU_NO_PAGINATION
+syn keyword	cConstant	MENU_TIME_FOREVER ITEMDRAW_DEFAULT ITEMDRAW_DISABLED ITEMDRAW_RAWLINE
+syn keyword	cConstant	ITEMDRAW_NOTEXT ITEMDRAW_SPACER ITEMDRAW_IGNORE ITEMDRAW_CONTROL
+syn keyword	cConstant	MENUFLAG_BUTTON_EXIT MENUFLAG_BUTTON_EXITBACK MENUFLAG_NO_SOUND VOTEINFO_CLIENT_INDEX
+syn keyword	cConstant	VOTEINFO_CLIENT_ITEM VOTEINFO_ITEM_INDEX VOTEINFO_ITEM_VOTES MenuSource_None
+syn keyword	cConstant	MenuSource_External MenuSource_Normal MenuSource_RawPanel 
+syn keyword	cTag		MenuStyle MenuAction MenuSource MenuHandler
+syn keyword	cTag		VoteHandler   
+
+" nextmap.inc
+syn keyword	cFunction	SetNextMap GetNextMap ForceChangeLevel GetMapHistorySize
+syn keyword	cFunction	GetMapHistory   
+
+" profiler.inc
+syn keyword	cFunction	CreateProfiler StartProfiling StopProfiling GetProfilerTime
+
+" regex.inc
+syn keyword	cFunction	CompileRegex MatchRegex GetRegexSubString SimpleRegexMatch
+syn keyword	cConstant	PCRE_CASELESS PCRE_MULTILINE PCRE_DOTALL PCRE_EXTENDED
+syn keyword	cConstant	PCRE_UNGREEDY PCRE_UTF8 PCRE_NO_UTF8_CHECK REGEX_ERROR_NONE
+syn keyword	cConstant	REGEX_ERROR_NOMATCH REGEX_ERROR_NULL REGEX_ERROR_BADOPTION REGEX_ERROR_BADMAGIC
+syn keyword	cConstant	REGEX_ERROR_UNKNOWN_OPCODE REGEX_ERROR_NOMEMORY REGEX_ERROR_NOSUBSTRING REGEX_ERROR_MATCHLIMIT
+syn keyword	cConstant	REGEX_ERROR_CALLOUT REGEX_ERROR_BADUTF8 REGEX_ERROR_BADUTF8_OFFSET REGEX_ERROR_PARTIAL
+syn keyword	cConstant	REGEX_ERROR_BADPARTIAL REGEX_ERROR_INTERNAL REGEX_ERROR_BADCOUNT REGEX_ERROR_DFA_UITEM
+syn keyword	cConstant	REGEX_ERROR_DFA_UCOND REGEX_ERROR_DFA_UMLIMIT REGEX_ERROR_DFA_WSSIZE REGEX_ERROR_DFA_RECURSE
+syn keyword	cConstant	REGEX_ERROR_RECURSIONLIMIT REGEX_ERROR_NULLWSLIMIT REGEX_ERROR_BADNEWLINE 
+syn keyword	cTag		RegexError   
+
+" sdktools.inc
+syn keyword	cFunction	StartPrepSDKCall PrepSDKCall_SetVirtual PrepSDKCall_SetSignature PrepSDKCall_SetFromConf
+syn keyword	cFunction	PrepSDKCall_SetReturnInfo PrepSDKCall_AddParameter EndPrepSDKCall SDKCall
+syn keyword	cConstant	SDKCall_Static SDKCall_Entity SDKCall_Player SDKCall_GameRules
+syn keyword	cConstant	SDKCall_EntityList SDKLibrary_Server SDKLibrary_Engine SDKConf_Virtual
+syn keyword	cConstant	SDKConf_Signature SDKType_CBaseEntity SDKType_CBasePlayer SDKType_Vector
+syn keyword	cConstant	SDKType_QAngle SDKType_PlainOldData SDKType_Float SDKType_Edict
+syn keyword	cConstant	SDKType_String SDKType_Bool SDKPass_Pointer SDKPass_Plain
+syn keyword	cConstant	SDKPass_ByValue SDKPass_ByRef VDECODE_FLAG_ALLOWNULL VDECODE_FLAG_ALLOWNOTINGAME
+syn keyword	cConstant	VDECODE_FLAG_ALLOWWORLD VDECODE_FLAG_BYREF VENCODE_FLAG_COPYBACK 
+syn keyword	cTag		SDKCallType SDKLibrary SDKFuncConfSource SDKType
+syn keyword	cTag		SDKPassMethod   
+
+" sdktools_engine.inc
+syn keyword	cFunction	SetClientViewEntity SetLightStyle GetClientEyePosition 
+syn keyword	cConstant	MAX_LIGHTSTYLES   
+
+" sdktools_entinput.inc
+syn keyword	cFunction	AcceptEntityInput SetVariantBool SetVariantString SetVariantInt
+syn keyword	cFunction	SetVariantFloat SetVariantVector3D SetVariantPosVector3D SetVariantColor
+syn keyword	cFunction	SetVariantEntity   
+
+" sdktools_entoutput.inc
+syn keyword	cFunction	HookEntityOutput UnhookEntityOutput HookSingleEntityOutput UnhookSingleEntityOutput
+syn keyword	cTag		EntityOutput   
+
+" sdktools_functions.inc
+syn keyword	cFunction	RemovePlayerItem GivePlayerItem GetPlayerWeaponSlot IgniteEntity
+syn keyword	cFunction	ExtinguishEntity TeleportEntity ForcePlayerSuicide SlapPlayer
+syn keyword	cFunction	FindEntityByClassname GetClientEyeAngles CreateEntityByName DispatchSpawn
+syn keyword	cFunction	DispatchKeyValue DispatchKeyValueFloat DispatchKeyValueVector GetClientAimTarget
+syn keyword	cFunction	GetTeamCount GetTeamName GetTeamScore SetTeamScore
+syn keyword	cFunction	GetTeamClientCount SetEntityModel GetPlayerDecalFile GetServerNetStats
+syn keyword	cFunction	EquipPlayerWeapon ActivateEntity SetClientInfo 
+
+" sdktools_sound.inc
+syn keyword	cFunction	PrefetchSound GetSoundDuration EmitAmbientSound FadeClientVolume
+syn keyword	cFunction	StopSound EmitSound EmitSentence AddAmbientSoundHook
+syn keyword	cFunction	AddNormalSoundHook RemoveAmbientSoundHook RemoveNormalSoundHook EmitSoundToClient
+syn keyword	cFunction	EmitSoundToAll ATTN_TO_SNDLEVEL  
+syn keyword	cConstant	SOUND_FROM_PLAYER SOUND_FROM_LOCAL_PLAYER SOUND_FROM_WORLD SNDVOL_NORMAL
+syn keyword	cConstant	SNDPITCH_NORMAL SNDPITCH_LOW SNDPITCH_HIGH SNDATTN_NONE
+syn keyword	cConstant	SNDATTN_NORMAL SNDATTN_STATIC SNDATTN_RICOCHET SNDATTN_IDLE
+syn keyword	cTag		AmbientSHook NormalSHook  
+
+" sdktools_stocks.inc
+syn keyword	cFunction	FindTeamByName   
+
+" sdktools_stringtables.inc
+syn keyword	cFunction	FindStringTable GetNumStringTables GetStringTableNumStrings GetStringTableMaxStrings
+syn keyword	cFunction	GetStringTableName FindStringIndex ReadStringTable GetStringTableDataLength
+syn keyword	cFunction	GetStringTableData SetStringTableData AddToStringTable LockStringTables
+syn keyword	cFunction	AddFileToDownloadsTable   
+syn keyword	cConstant	INVALID_STRING_TABLE INVALID_STRING_INDEX  
+
+" sdktools_tempents.inc
+syn keyword	cFunction	AddTempEntHook RemoveTempEntHook TE_Start TE_IsValidProp
+syn keyword	cFunction	TE_WriteNum TE_ReadNum TE_WriteFloat TE_ReadFloat
+syn keyword	cFunction	TE_WriteVector TE_ReadVector TE_WriteAngles TE_WriteFloatArray
+syn keyword	cFunction	TE_Send TE_WriteEncodedEnt TE_SendToAll TE_SendToClient
+syn keyword	cTag		TEHook   
+
+" sdktools_tempents_stocks.inc
+syn keyword	cFunction	TE_SetupSparks TE_SetupSmoke TE_SetupDust TE_SetupMuzzleFlash
+syn keyword	cFunction	TE_SetupMetalSparks TE_SetupEnergySplash TE_SetupArmorRicochet TE_SetupGlowSprite
+syn keyword	cFunction	TE_SetupExplosion TE_SetupBloodSprite TE_SetupBeamRingPoint TE_SetupBeamPoints
+syn keyword	cFunction	TE_SetupBeamLaser TE_SetupBeamRing TE_SetupBeamFollow 
+syn keyword	cConstant	TE_EXPLFLAG_NONE TE_EXPLFLAG_NOADDITIVE TE_EXPLFLAG_NODLIGHTS TE_EXPLFLAG_NOSOUND
+syn keyword	cConstant	TE_EXPLFLAG_NOPARTICLES TE_EXPLFLAG_DRAWALPHA TE_EXPLFLAG_ROTATE TE_EXPLFLAG_NOFIREBALL
+syn keyword	cConstant	TE_EXPLFLAG_NOFIREBALLSMOKE FBEAM_STARTENTITY FBEAM_ENDENTITY FBEAM_FADEIN
+syn keyword	cConstant	FBEAM_FADEOUT FBEAM_SINENOISE FBEAM_SOLID FBEAM_SHADEIN
+syn keyword	cConstant	FBEAM_SHADEOUT FBEAM_ONLYNOISEONCE FBEAM_NOTILE FBEAM_USE_HITBOXES
+syn keyword	cConstant	FBEAM_STARTVISIBLE FBEAM_ENDVISIBLE FBEAM_ISACTIVE FBEAM_FOREVER
+syn keyword	cConstant	FBEAM_HALOBEAM   
+
+" sdktools_trace.inc
+syn keyword	cFunction	TR_GetPointContents TR_GetPointContentsEnt TR_TraceRay TR_TraceHull
+syn keyword	cFunction	TR_TraceRayFilter TR_TraceHullFilter TR_TraceRayEx TR_TraceHullEx
+syn keyword	cFunction	TR_TraceRayFilterEx TR_TraceHullFilterEx TR_GetFraction TR_GetEndPosition
+syn keyword	cFunction	TR_GetEntityIndex TR_DidHit TR_GetHitGroup TR_GetPlaneNormal
+syn keyword	cConstant	CONTENTS_EMPTY CONTENTS_SOLID CONTENTS_WINDOW CONTENTS_AUX
+syn keyword	cConstant	CONTENTS_GRATE CONTENTS_SLIME CONTENTS_WATER CONTENTS_MIST
+syn keyword	cConstant	CONTENTS_OPAQUE LAST_VISIBLE_CONTENTS ALL_VISIBLE_CONTENTS CONTENTS_TESTFOGVOLUME
+syn keyword	cConstant	CONTENTS_UNUSED5 CONTENTS_UNUSED6 CONTENTS_TEAM1 CONTENTS_TEAM2
+syn keyword	cConstant	CONTENTS_IGNORE_NODRAW_OPAQUE CONTENTS_MOVEABLE CONTENTS_AREAPORTAL CONTENTS_PLAYERCLIP
+syn keyword	cConstant	CONTENTS_MONSTERCLIP CONTENTS_CURRENT_0 CONTENTS_CURRENT_90 CONTENTS_CURRENT_180
+syn keyword	cConstant	CONTENTS_CURRENT_270 CONTENTS_CURRENT_UP CONTENTS_CURRENT_DOWN CONTENTS_ORIGIN
+syn keyword	cConstant	CONTENTS_MONSTER CONTENTS_DEBRIS CONTENTS_DETAIL CONTENTS_TRANSLUCENT
+syn keyword	cConstant	CONTENTS_LADDER CONTENTS_HITBOX MASK_ALL MASK_SOLID
+syn keyword	cConstant	MASK_PLAYERSOLID MASK_NPCSOLID MASK_WATER MASK_OPAQUE
+syn keyword	cConstant	MASK_OPAQUE_AND_NPCS MASK_VISIBLE MASK_VISIBLE_AND_NPCS MASK_SHOT
+syn keyword	cConstant	MASK_SHOT_HULL MASK_SHOT_PORTAL MASK_SOLID_BRUSHONLY MASK_PLAYERSOLID_BRUSHONLY
+syn keyword	cConstant	MASK_NPCSOLID_BRUSHONLY MASK_NPCWORLDSTATIC MASK_SPLITAREAPORTAL RayType_EndPoint
+syn keyword	cConstant	RayType_Infinite   
+syn keyword	cTag		RayType TraceEntityFilter  
+
+" sdktools_voice.inc
+syn keyword	cFunction	SetClientListeningFlags GetClientListeningFlags SetClientListening GetClientListening
+syn keyword	cConstant	VOICE_NORMAL VOICE_MUTED VOICE_SPEAKALL VOICE_LISTENALL
+syn keyword	cConstant	VOICE_TEAM VOICE_LISTENTEAM  
+
+" sorting.inc
+syn keyword	cFunction	SortIntegers SortFloats SortStrings SortCustom1D
+syn keyword	cFunction	SortCustom2D SortADTArray SortADTArrayCustom 
+syn keyword	cConstant	Sort_Ascending Sort_Descending Sort_Random 
+syn keyword	cTag		SortOrder SortType SortFunc1D SortFunc2D
+syn keyword	cTag		SortFuncADTArray   
+
+" sourcemod.inc
+syn keyword	cFunction	GetMyHandle GetPluginIterator MorePlugins ReadPlugin
+syn keyword	cFunction	GetPluginStatus GetPluginFilename IsPluginDebugging GetPluginInfo
+syn keyword	cFunction	FindPluginByNumber SetFailState ThrowError GetTime
+syn keyword	cFunction	FormatTime LoadGameConfigFile GameConfGetOffset GameConfGetKeyValue
+syn keyword	cFunction	GetSysTickCount AutoExecConfig MarkNativeAsOptional RegPluginLibrary
+syn keyword	cFunction	LibraryExists GetExtensionFileStatus ReadMapList SetMapListCompatBind
+syn keyword	cConstant	myinfo MAPLIST_FLAG_MAPSFOLDER MAPLIST_FLAG_CLEARARRAY MAPLIST_FLAG_NO_DEFAULT
+syn keyword	cTag		Plugin   
+syn keyword	cForward	OnPluginStart AskPluginLoad OnPluginEnd OnPluginPauseChange
+syn keyword	cForward	OnGameFrame OnMapStart OnMapEnd OnConfigsExecuted
+syn keyword	cForward	OnAutoConfigsBuffered OnServerCfg OnAllPluginsLoaded OnLibraryAdded
+syn keyword	cForward	OnLibraryRemoved OnClientFloodCheck OnClientFloodResult 
+
+" string.inc
+syn keyword	cFunction	strlen StrContains strcmp strncmp
+syn keyword	cFunction	StrCompare StrEqual strcopy StrCopy
+syn keyword	cFunction	Format FormatEx VFormat StringToInt
+syn keyword	cFunction	StringToIntEx IntToString StringToFloat StringToFloatEx
+syn keyword	cFunction	FloatToString BreakString StrBreak TrimString
+syn keyword	cFunction	SplitString ReplaceString ReplaceStringEx GetCharBytes
+syn keyword	cFunction	IsCharAlpha IsCharNumeric IsCharSpace IsCharMB
+syn keyword	cFunction	IsCharUpper IsCharLower StripQuotes CharToUpper
+syn keyword	cFunction	CharToLower FindCharInString StrCat ExplodeString
+syn keyword	cFunction	ImplodeStrings   
+
+" textparse.inc
+syn keyword	cFunction	SMC_CreateParser SMC_ParseFile SMC_GetErrorString SMC_SetParseStart
+syn keyword	cFunction	SMC_SetParseEnd SMC_SetReaders SMC_SetRawLine 
+syn keyword	cConstant	SMCParse_Continue SMCParse_Halt SMCParse_HaltFail SMCError_Okay
+syn keyword	cConstant	SMCError_StreamOpen SMCError_StreamError SMCError_Custom SMCError_InvalidSection1
+syn keyword	cConstant	SMCError_InvalidSection2 SMCError_InvalidSection3 SMCError_InvalidSection4 SMCError_InvalidSection5
+syn keyword	cConstant	SMCError_InvalidTokens SMCError_TokenOverflow SMCError_InvalidProperty1 
+syn keyword	cTag		SMCResult SMCError SMC_ParseStart SMC_ParseEnd
+syn keyword	cTag		SMC_NewSection SMC_KeyValue SMC_EndSection SMC_RawLine
+
+" tf2.inc
+syn keyword	cFunction	TF2_RespawnPlayer TF2_DisguisePlayer TF2_RemovePlayerDisguise TF2_GetResourceEntity
+syn keyword	cFunction	TF2_GetClass   
+syn keyword	cConstant	TFClass_Unknown TFClass_Scout TFClass_Sniper TFClass_Soldier
+syn keyword	cConstant	TFClass_DemoMan TFClass_Medic TFClass_Heavy TFClass_Pyro
+syn keyword	cConstant	TFClass_Spy TFClass_Engineer TFTeam_Unassigned TFTeam_Spectator
+syn keyword	cConstant	TFTeam_Red TFTeam_Blue  
+syn keyword	cTag		TFClassType TFTeam  
+syn keyword	cForward	TF2_CalcIsAttackCritical   
+
+" tf2_stocks.inc
+syn keyword	cFunction	TF2_GetPlayerClass TF2_SetPlayerClass TF2_GetPlayerResourceData TF2_SetPlayerResourceData
+syn keyword	cFunction	TF2_RemoveWeaponSlot TF2_RemoveAllWeapons  
+syn keyword	cConstant	TFResource_Ping TFResource_Score TFResource_Deaths TFResource_TotalScore
+syn keyword	cConstant	TFResource_Captures TFResource_Defenses TFResource_Dominations TFResource_Revenge
+syn keyword	cConstant	TFResource_BuildingsDestroyed TFResource_Headshots TFResource_Backstabs TFResource_HealPoints
+syn keyword	cConstant	TFResource_Invulns TFResource_Teleports TFResource_ResupplyPoints TFResource_KillAssists
+syn keyword	cConstant	TFResource_MaxHealth TFResource_PlayerClass  
+syn keyword	cTag		TFResourceType   
+
+" timers.inc
+syn keyword	cFunction	CreateTimer KillTimer TriggerTimer GetTickedTime
+syn keyword	cFunction	GetMapTimeLeft GetMapTimeLimit ExtendMapTimeLimit GetTickInterval
+syn keyword	cFunction	IsServerProcessing CreateDataTimer  
+syn keyword	cConstant	TIMER_REPEAT TIMER_FLAG_NO_MAPCHANGE TIMER_HNDL_CLOSE TIMER_DATA_HNDL_CLOSE
+syn keyword	cTag		Timer   
+syn keyword	cForward	OnMapTimeLeftChanged   
+
+" topmenus.inc
+syn keyword	cFunction	CreateTopMenu LoadTopMenuConfig AddToTopMenu GetTopMenuInfoString
+syn keyword	cFunction	GetTopMenuObjName RemoveFromTopMenu DisplayTopMenu FindTopMenuCategory
+syn keyword	cConstant	TopMenuAction_DisplayOption TopMenuAction_DisplayTitle TopMenuAction_SelectOption TopMenuObject_Category
+syn keyword	cConstant	TopMenuObject_Item TopMenuPosition_Start TopMenuPosition_LastRoot TopMenuPosition_LastCategory
+syn keyword	cConstant	INVALID_TOPMENUOBJECT   
+syn keyword	cTag		TopMenuAction TopMenuObjectType TopMenuPosition TopMenuObject
+syn keyword	cTag		TopMenuHandler   
+
+" usermessages.inc
+syn keyword	cFunction	GetUserMessageId GetUserMessageName StartMessage StartMessageEx
+syn keyword	cFunction	EndMessage HookUserMessage UnhookUserMessage StartMessageAll
+syn keyword	cFunction	StartMessageOne   
+syn keyword	cConstant	INVALID_MESSAGE_ID USERMSG_RELIABLE USERMSG_INITMSG USERMSG_BLOCKHOOKS
+syn keyword	cTag		UserMsg MsgHook MsgPostHook 
+
+" vector.inc
+syn keyword	cFunction	GetVectorLength GetVectorDistance GetVectorDotProduct GetVectorCrossProduct
+syn keyword	cFunction	NormalizeVector GetAngleVectors GetVectorAngles GetVectorVectors
+syn keyword	cFunction	AddVectors SubtractVectors ScaleVector NegateVector
+syn keyword	cFunction	MakeVectorFromPoints   
+
+" version.inc
+syn keyword	cConstant	SOURCEMOD_V_MAJOR SOURCEMOD_V_MINOR SOURCEMOD_V_RELEASE SOURCEMOD_VERSION
 " Accept %: for # (C99)
 syn region	cPreCondit	start="^\s*\(%:\|#\)\s*\(if\|ifdef\|ifndef\|elif\)\>" skip="\\$" end="$" end="//"me=s-1 contains=cComment,cCppString,cCharacter,cCppParen,cParenError,cNumbers,cCommentError,cSpaceError
 syn match	cPreCondit	display "^\s*\(%:\|#\)\s*\(else\|endif\)\>"

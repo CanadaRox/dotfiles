@@ -1,4 +1,4 @@
-:source /home/canadarox/.vim/colemak.vim
+source /home/canadarox/.vim/colemak.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
@@ -6,9 +6,9 @@
 " Sets how many lines of history VIM has to remember
 set history=700
 
+syntax enable
 " Enable filetype plugin
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 
 " Map leader to ,
 let mapleader = ","
@@ -60,12 +60,28 @@ set novisualbell
 set t_vb=
 set tm=500
 
+" Show whitespace characters
+set listchars=tab:▸\ 
+set list
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Clipboard magic
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" --copying / pasting
+" allow vim commands to copy to system clipboard (*)
+" for X11:
+" + is the clipboard register (Ctrl-{c,v})
+" * is the selection register (middle click, Shift-Insert)
+set clipboard=unnamed
+
+" use clipboard register in linux when supported
+if has("unix") && v:version >= 703
+    set clipboard+=unnamedplus
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-syntax enable "Enable syntax hl
-
 colorscheme wombat256mod
 
 set encoding=utf8
