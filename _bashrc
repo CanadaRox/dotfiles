@@ -1,3 +1,4 @@
+#!/bin/bash
 # interactive?
 [ -z "$PS1" ] && return
 
@@ -29,16 +30,11 @@ HISTCONTROL=ignoredupes:ignorespace
 HISTSIZE=12000
 
 export EDITOR=vim
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/java/bin:/opt/java/db/bin:/opt/java/jre/bin:/usr/bin/core_perl:/home/canadarox/bin::
-# if [ "$TERM" = "rxvt-unicode-256color" ]
-# then
-	# TERM=rxvt-unicode
-# fi
+PATH=$PATH:$HOME/bin::
 
-#bind "i":forward-char
-#bind "n":next-history
-#bind "e":previous-history
-#bind "l":vi-insertion-mode
-#bind "A":insert-beg
-#set -o vi
+if [ "$TERM" = "rxvt-unicode-256color" -a ! -e /usr/share/terminfo/r/rxvt-unicode-256color ]
+then
+	TERM=rxvt-unicode
+fi
+
 set -o emacs
