@@ -1,4 +1,4 @@
-source /home/canadarox/.vim/colemak.vim
+source $HOME/.vim/colemak.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
@@ -61,7 +61,7 @@ set t_vb=
 set tm=500
 
 " Show whitespace characters
-set listchars=tab:▸\ 
+set listchars=tab:>\ 
 set list
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
