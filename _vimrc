@@ -84,7 +84,14 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme wombat256mod
 
+if has("gui_running")
+	if has("win32")
+		set guifont=Consolas:h11:cANSI
+	endif
+endif
+
 set encoding=utf8
+
 try
 	lang en_US
 catch
