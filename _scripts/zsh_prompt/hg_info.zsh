@@ -3,7 +3,7 @@
 function hg_prompt_info() {
 	ref=$(hg_curr_branch)
 	if [[ $(echo $ref | wc -c) > 1 ]]; then
-		echo "$ZSH_THEME_HG_PROMPT_PREFIX$ref$(parse_hg_dirty)$ZSH_THEME_HG_PROMPT_SUFFIX"
+		echo "$ZSH_THEME_HG_PROMPT_PREFIX$ref$(parse_hg_dirty)$(hg_prompt_ahead)$ZSH_THEME_HG_PROMPT_SUFFIX"
 	fi
 }
 
