@@ -1,0 +1,71 @@
+#autoload -U colors && colors
+autoload colors; colors
+setopt prompt_subst
+
+source ~/.scripts/zsh_prompt/git_info.zsh
+source ~/.scripts/zsh_prompt/hg_info.zsh
+
+local return_code="%(%{$fg[red]%}%? ↵%{$reset_color%})"
+
+PROMPT='%{$fg[yellow]%}%n%{$reset_color%} @ %{$fg[green]%}%m%{$reset_color%} $(hg_prompt_info)$(git_prompt_info)%{$fg[red]%}%~ %# %{$reset_color%}'
+RPS1="$INSERT_INDICATOR"
+RPS2=$RPS1
+
+INSERT_INDICATOR="%{$fg[magenta]%}<<<%{$reset_color%}"
+COMMAND_INDICATOR="%{$fg[green]%}<<<%{$reset_color%}"
+
+# git theming default: Variables for theming the git info prompt
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[cyan]%}‹"
+ZSH_THEME_GIT_PROMPT_SUFFIX="${parse_git_dirty}› %{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_DIRTY="*"              # Text to display if the branch is dirty
+ZSH_THEME_GIT_PROMPT_UNTRACKED=""
+ZSH_THEME_GIT_PROMPT_CLEAN=""               # Text to display if the branch is clean
+
+# hg theming default: Variables for theming the hg info prompt
+ZSH_THEME_HG_PROMPT_PREFIX="%{$fg_bold[cyan]%}‹"
+ZSH_THEME_HG_PROMPT_SUFFIX="${parse_hg_dirty}› %{$reset_color%}"
+ZSH_THEME_HG_PROMPT_DIRTY="*"              # Text to display if the branch is dirty
+ZSH_THEME_HG_PROMPT_UNTRACKED=""
+ZSH_THEME_HG_PROMPT_CLEAN=""               # Text to display if the branch is clean
+
+bindkey -v
+
+function zle-line-init zle-keymap-select {
+	RPS1="${${KEYMAP/vicmd/$COMMAND_INDICATOR}/(main|viins)/$INSERT_INDICATOR}"
+	RPS2=$RPS1
+	zle reset-prompt
+}
+
+zle -N zle-line-init
+zle -N zle-keymap-select
+
+source ~/.aliases
+
+# colemak binds
+bindkey -M vicmd "n" down-line-or-history
+bindkey -M vicmd "N" vi-join
+
+bindkey -M vicmd "e" up-line-or-history
+
+bindkey -M vicmd "i" vi-forward-char
+
+bindkey -M vicmd "l" vi-insert
+bindkey -M vicmd "L" vi-insert-bol
+
+bindkey -M vicmd "k" vi-repeat-search
+bindkey -M vicmd "K" vi-rev-repeat-search
+
+bindkey -M vicmd "j" vi-forward-word-end
+bindkey -M vicmd "J" vi-forward-blank-word-end
+
+export EDITOR=vim
+PATH=$PATH:$HOME/bin::
+
+HISTFILE=~/.histfile
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory extendedglob
+
+zstyle :compinstall filename '/home/canadarox/.zshrc'
+
+autoload -Uz compinit && compinit

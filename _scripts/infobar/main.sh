@@ -16,11 +16,11 @@ then
 	OUTPUT="$OUTPUT [$NET_INFO]"
 fi
 
-BATT_INFO=$( $SCRIPT_PATH/batt_info.sh )
-if [ -n "$BATT_INFO" ]
-then
-	OUTPUT="$OUTPUT [$BATT_INFO]"
-fi
+#BATT_INFO=$( $SCRIPT_PATH/batt_info.sh )
+#if [ -n "$BATT_INFO" ]
+#then
+	#OUTPUT="$OUTPUT [$BATT_INFO]"
+#fi
 
 CPU_FREQ=$( $SCRIPT_PATH/cpu_freq.sh )
 if [ -n "$CPU_FREQ" ]

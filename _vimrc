@@ -1,29 +1,21 @@
-source $HOME/.vim/colemak.vim
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" {{{
+" COLEMAK!!!
+source $HOME/.vim/colemak.vim
 " Sets how many lines of history VIM has to remember
 set history=700
+set foldmethod=marker
 
-syntax enable
 " Enable filetype plugin
 filetype plugin indent on
 
 " Map leader to ,
 let mapleader = ","
-let g:mapleader = ","
+" }}}
 
-" Remap ; to :
-nnoremap ; :|
-xnoremap ; :|
-
-" Set to auto read whena file is changed from the outside
-set autoread
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" {{{
 " Set 7 lines to the curors - when moving vertical..
 set so=7
 
@@ -50,9 +42,11 @@ set magic "Set magic on, for regular expressions
 set showmatch "Show matching bracets when text indicator is over them
 set mat=2 "How many tenths of a second to blink
 
-set nohid "Don't hide modified buffers
+set hidden "Hide modified buffers (DON'T :q!)
 
 set cursorline "Highlight current line
+
+set autochdir "Change dir to active buffer dir
 
 " No sound on errors
 set noerrorbells
@@ -64,9 +58,12 @@ set tm=500
 set listchars=tab:>\ 
 set list
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Clipboard magic
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" LaTeX mode
+let g:tex_flavor='latex'
+"}}}
+
+" Clipboard magic TODO compile vim with xterm support
+" {{{
 " --copying / pasting
 " allow vim commands to copy to system clipboard (*)
 " for X11:
@@ -79,15 +76,20 @@ if has("unix") && v:version >= 703
     set clipboard+=unnamedplus
 endif
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <Leader>p :set paste! paste?<CR>
+" }}}
+
 " => Colors and Fonts
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" {{{
+syntax enable
 colorscheme wombat256mod
 
 if has("gui_running")
 	if has("win32")
 		set guifont=Consolas:h11:cANSI
 	endif
+	" Set gui tab label to the name of the file
+	set guitablabel=%t
 endif
 
 set encoding=utf8
@@ -98,37 +100,31 @@ catch
 endtry
 
 set ffs=unix,dos,mac "Default file types
+" }}}
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" {{{
 " Turn backup off, since most stuff is in SVN, git anyway...
 set nobackup
 set nowb
 set noswapfile
+" }}}
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" {{{
 set noexpandtab
 set shiftwidth=4
 set tabstop=4
-set smarttab
+set softtabstop=4
 
-set lbr
-set tw=500
+set autoindent
+set smartindent
+set nowrap
+set number
+" }}}
 
-set ai "Auto indent
-set si "Smart indet
-set nowrap "Wrap lines
-set number "Line numbers
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs and buffers
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" {{{
 " Map space to / (search) and c-space to ? (backgwards search)
 map <space> /
 map <C-space> ?
@@ -148,11 +144,10 @@ map <leader>tm :tabmove
 
 " When pressing <leader>cd switch to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>
+" }}}
 
-
-""""""""""""""""""""""""""""""
 " => Statusline
-""""""""""""""""""""""""""""""
+" {{{
 " Always hide the statusline
 set laststatus=2
 
@@ -171,25 +166,20 @@ function! HasPaste()
         return ''
     endif
 endfunction
+" }}}
 
-" Set gui tab label to the name of the file
-set guitablabel=%t
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Spell checking
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" {{{
 "Pressing ,ss will toggle and untoggle spell checking
 map <leader>ss :setlocal spell!<cr>
+set spelllang=en_ca
 
 "Shortcuts using <leader>
 map <leader>sk ]s
 map <leader>sp [s
 map <leader>sa zg
 map <leader>s? z=
-
-set pastetoggle=<F2>
+" }}}
 
 au BufNewFile,BufRead *.sp set filetype=sourcepawn
 
-let g:tex_flavor='latex'
