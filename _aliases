@@ -14,3 +14,7 @@ alias la='ls -a'
 alias lla='ls -lah'
 
 alias ryerson='ssh mclair@moon.scs.ryerson.ca'
+
+alias qwerty='setxkbmap us'
+alias qwfpgj='setxkbmap us'
+alias colemak='setxkbmap us -variant colemak'
