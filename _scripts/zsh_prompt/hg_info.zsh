@@ -25,13 +25,13 @@ function parse_hg_dirty() {
 }
 
 function hg_prompt_ahead() {
-	if [[$(echo "$(hg sum | grep -c clean)") > 0]]; then
+	if [[ $(echo "$(hg sum | grep -c clean)") > 0 ]]; then
 		echo "$ZSH_THEME_HG_PROMPT_AHEAD"
 	fi
 }
 
 function hg_curr_branch() {
-	echo "$(hg summary 2>/dev/null | grep branch | cut -d' ' -f2-)"
+	echo "$(hg summary 2>/dev/null | grep branch | head -1 | cut -d' ' -f2)"
 }
 
 function hg_prompt_sha()
