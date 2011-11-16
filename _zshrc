@@ -60,6 +60,8 @@ bindkey -M vicmd "K" vi-rev-repeat-search
 bindkey -M vicmd "j" vi-forward-word-end
 bindkey -M vicmd "J" vi-forward-blank-word-end
 
+bindkey -M vicmd "TAB" list-choices
+
 export EDITOR=vim
 PATH=$PATH:$HOME/bin::
 
