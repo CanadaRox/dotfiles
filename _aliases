@@ -19,3 +19,7 @@ alias ryerson='ssh mclair@moon.scs.ryerson.ca'
 alias qwerty='setxkbmap us'
 alias qwfpgj='setxkbmap us'
 alias colemak='setxkbmap us -variant colemak'
+
+alias blank='xset dpms force off'
+alias notp='synclient touchpadoff=1 && xdotool mousemove 0 0'
+alias tp='synclient touchpadoff=0'

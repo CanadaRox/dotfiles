@@ -62,7 +62,7 @@ set list
 let g:tex_flavor='latex'
 "}}}
 
-" =>Clipboard magic TODO compile vim with xterm support
+" => Clipboard magic TODO compile vim with xterm support
 " {{{
 " --copying / pasting
 " allow vim commands to copy to system clipboard (*)
@@ -100,6 +100,11 @@ catch
 endtry
 
 set ffs=unix,dos,mac "Default file types
+" }}}
+
+" => Backups
+" {{{
+set backupdir=~/.vim/backup
 " }}}
 
 " => Text, tab and indent related
