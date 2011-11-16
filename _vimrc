@@ -62,7 +62,7 @@ set list
 let g:tex_flavor='latex'
 "}}}
 
-" Clipboard magic TODO compile vim with xterm support
+" =>Clipboard magic TODO compile vim with xterm support
 " {{{
 " --copying / pasting
 " allow vim commands to copy to system clipboard (*)
@@ -82,7 +82,7 @@ nnoremap <Leader>p :set paste! paste?<CR>
 " => Colors and Fonts
 " {{{
 syntax enable
-colorscheme wombat256mod
+colorscheme mirodark 
 
 if has("gui_running")
 	if has("win32")
@@ -100,14 +100,6 @@ catch
 endtry
 
 set ffs=unix,dos,mac "Default file types
-" }}}
-
-" => Files, backups and undo
-" {{{
-" Turn backup off, since most stuff is in SVN, git anyway...
-set nobackup
-set nowb
-set noswapfile
 " }}}
 
 " => Text, tab and indent related
