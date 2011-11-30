@@ -1,4 +1,3 @@
-
 " => General
 " {{{
 " COLEMAK!!!
@@ -12,6 +11,9 @@ filetype plugin indent on
 
 " Map leader to ,
 let mapleader = ","
+
+" Load pathogen
+call pathogen#infect()
 " }}}
 
 " => VIM user interface
@@ -82,7 +84,8 @@ nnoremap <Leader>p :set paste! paste?<CR>
 " => Colors and Fonts
 " {{{
 syntax enable
-colorscheme wombat256mod
+set background=dark
+colorscheme crx
 
 if has("gui_running")
 	if has("win32")
