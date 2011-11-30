@@ -18,8 +18,7 @@ call pathogen#infect()
 
 " => VIM user interface
 " {{{
-" Set 7 lines to the curors - when moving vertical..
-set so=7
+set scrolloff=7 "number of lines to keep above/below the cursor when scrolling
 
 set wildmenu "Turn on WiLd menu
 
@@ -42,7 +41,7 @@ set lazyredraw "Don't redraw while executing macros
 set magic "Set magic on, for regular expressions
 
 set showmatch "Show matching bracets when text indicator is over them
-set mat=2 "How many tenths of a second to blink
+set matchtime=2 "How many tenths of a second to blink
 
 set hidden "Hide modified buffers (DON'T :q!)
 
@@ -102,7 +101,7 @@ try
 catch
 endtry
 
-set ffs=unix,dos,mac "Default file types
+set fileformats=unix,dos,mac "Default file types
 " }}}
 
 " => Backups
@@ -181,5 +180,7 @@ map <leader>sa zg
 map <leader>s? z=
 " }}}
 
+" => Custom filetype definitions
+" {{{
 au BufNewFile,BufRead *.sp set filetype=sourcepawn
-
+" }}}
