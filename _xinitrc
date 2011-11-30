@@ -9,12 +9,9 @@ xrdb -merge ~/.Xresources
 xset +fp /usr/share/fonts/local 
 xset fp rehash &
 
-# enable ctrl+alt+backspace
-setxkbmap -option terminate:ctrl_alt_bksp &
-
 # disable mouse when typing
 syndaemon -t -k -i 2 -d &
-unclutter -idle 5 &
+# unclutter -idle 5 &
 
 # enable palm detection
 xinput set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Palm Detection" 1
