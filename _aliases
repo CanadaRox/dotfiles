@@ -21,3 +21,7 @@ alias qwfpgj='setxkbmap us'
 alias colemak='setxkbmap us -variant colemak'
 
 alias blank='xset dpms force off'
+
+# super lazy mode
+alias v='vim'
+alias g='git'
