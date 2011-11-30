@@ -2,7 +2,6 @@
 " Maintainer:   CanadaRox <canada.rox.gh@gmail.com>
 " Last Change:  2011-11-30 02:30
 " URL:          https://www.github.com/CanadaRox/dotfiles
-" Based on a slightly modified wombat256mod
 
 set background=dark
 hi clear
