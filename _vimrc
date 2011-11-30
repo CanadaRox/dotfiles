@@ -62,7 +62,7 @@ set list
 let g:tex_flavor='latex'
 "}}}
 
-" => Clipboard magic TODO compile vim with xterm support
+" => Clipboard magic
 " {{{
 " --copying / pasting
 " allow vim commands to copy to system clipboard (*)
@@ -82,7 +82,7 @@ nnoremap <Leader>p :set paste! paste?<CR>
 " => Colors and Fonts
 " {{{
 syntax enable
-colorscheme mirodark 
+colorscheme wombat256mod
 
 if has("gui_running")
 	if has("win32")
