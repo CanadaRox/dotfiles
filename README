@@ -1,3 +1,0 @@
-Just a way to sync all of my critical configurations between mulptiple computers.
-
-I create .dotfiles then ln -s the .dotfile/_file to ~/.file.  Sourcing/including/importing/etc from the original also works fine.
