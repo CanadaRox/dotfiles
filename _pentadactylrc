@@ -1,4 +1,3 @@
 source ~/.vim/colemak.vim
 
 map <C-j> :downloads<cr>
-nnoremap ; :|
