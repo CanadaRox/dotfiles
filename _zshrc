@@ -1,3 +1,4 @@
+#!/bin/zsh
 #autoload -U colors && colors
 autoload colors; colors
 setopt prompt_subst
@@ -5,9 +6,10 @@ setopt prompt_subst
 source ~/.scripts/zsh_prompt/git_info.zsh
 source ~/.scripts/zsh_prompt/hg_info.zsh
 
-local return_code="%(%{$fg[red]%}%? ↵%{$reset_color%})"
+#local return_code="%(%{$fg[red]%}%? ↵%{$reset_color%})"
 
-PROMPT='%{$fg[yellow]%}%n%{$reset_color%} @ %{$fg[green]%}%m%{$reset_color%} $(hg_prompt_info)$(git_prompt_info)%{$fg[red]%}%~ %# %{$reset_color%}'
+PROMPT="test> "
+PROMPT='%{$terminfo[bold]$fg[magenta]%}%n%{$reset_color%} @ %{$terminfo[bold]$fg[cyan]%}%m%{$reset_color%} $(hg_prompt_info)$(git_prompt_info)%{$terminfo[bold]$fg[yellow]%}%~ %# %{$reset_color%}'
 RPS1="$INSERT_INDICATOR"
 RPS2=$RPS1
 
@@ -60,15 +62,18 @@ bindkey -M vicmd "K" vi-rev-repeat-search
 bindkey -M vicmd "j" vi-forward-word-end
 bindkey -M vicmd "J" vi-forward-blank-word-end
 
-bindkey -M vicmd "TAB" list-choices
+# I guess it didn't work =(
+# bindkey -M vicmd "TAB" list-choices
 
 export EDITOR=vim
-PATH=$PATH:$HOME/bin::
+PATH=$PATH:$HOME/bin:
 
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
-setopt appendhistory extendedglob
+setopt appendhistory
+setopt extendedglob
+setopt hist_ignore_dups
 
 zstyle :compinstall filename '/home/canadarox/.zshrc'
 
