@@ -11,8 +11,8 @@ alias ......='cd ../../..'
 
 alias ls='ls --color=auto'
 alias ll='ls -l'
-alias la='ls -a'
-alias lla='ls -lah'
+alias la='ls -A'
+alias lla='ls -lAh'
 
 alias ryerson='ssh mclair@moon.scs.ryerson.ca'
 
@@ -21,5 +21,3 @@ alias qwfpgj='setxkbmap us'
 alias colemak='setxkbmap us -variant colemak'
 
 alias blank='xset dpms force off'
-alias notp='synclient touchpadoff=1 && xdotool mousemove 0 0'
-alias tp='synclient touchpadoff=0'
