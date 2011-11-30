@@ -45,10 +45,10 @@ hi! DiffChange ctermbg=0
 " Syntax highlighting
 hi! Keyword ctermfg=13
 hi! Statement ctermfg=14
-hi! Constant ctermfg=10
-hi! Number ctermfg=3
+hi! Constant ctermfg=13
+hi! Number ctermfg=11
 hi! PreProc ctermfg=1
-hi! Function ctermfg=11
+hi! Function ctermfg=2
 hi! Identifier ctermfg=11
 hi! Type ctermfg=9
 hi! Special ctermfg=13
