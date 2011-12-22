@@ -9,7 +9,8 @@ source ~/.scripts/zsh_prompt/hg_info.zsh
 #local return_code="%(%{$fg[red]%}%? ↵%{$reset_color%})"
 
 PROMPT="test> "
-PROMPT='%{$terminfo[bold]$fg[magenta]%}%n%{$reset_color%} @ %{$terminfo[bold]$fg[cyan]%}%m%{$reset_color%} $(hg_prompt_info)$(git_prompt_info)%{$terminfo[bold]$fg[yellow]%}%~ %# %{$reset_color%}'
+#PROMPT='%{$terminfo[bold]$fg[magenta]%}%n%{$reset_color%} @ %{$terminfo[bold]$fg[cyan]%}%m%{$reset_color%} $(hg_prompt_info)$(git_prompt_info)%{$terminfo[bold]$fg[yellow]%}%~ %# %{$reset_color%}'
+PROMPT='%{$terminfo[bold]$fg[magenta]%}%n%{$reset_color%} @ %{$terminfo[bold]$fg[cyan]%}%m%{$reset_color%} %{$terminfo[bold]$fg[yellow]%}%~ %# %{$reset_color%}'
 RPS1="$INSERT_INDICATOR"
 RPS2=$RPS1
 
