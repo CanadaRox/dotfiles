@@ -47,7 +47,7 @@ set hidden "Hide modified buffers (DON'T :q!)
 
 set cursorline "Highlight current line
 
-set autochdir "Change dir to active buffer dir
+"set autochdir "Change dir to active buffer dir
 
 " No sound on errors
 set noerrorbells
@@ -56,8 +56,9 @@ set t_vb=
 set tm=500
 
 " Show whitespace characters
-set listchars=tab:>\ 
-set list
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+set nolist
+nnoremap <Leader>l :set list! list?<CR>
 
 " LaTeX mode
 let g:tex_flavor='latex'
