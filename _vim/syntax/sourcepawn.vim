@@ -844,6 +844,6 @@ hi def link cForward    	Function
 
 let b:current_syntax = "sourcepawn"
 
-set makeprg=~/dev/sourcemod/addons/sourcemod/scripting/spcomp\ %
+set makeprg=~/dev/sourcemod/sourcemod/addons/sourcemod/scripting/spcomp\ %
 set errorformat=%f\(%l\)\ :\ fatal\ %t%*[^0-9]%n:\ %m,%f\(%l\)\ :\ %t%*[^0-9]%n:\ %m
 " vim: ts=4

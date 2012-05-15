@@ -183,5 +183,6 @@ map <leader>s? z=
 
 " => Custom filetype definitions
 " {{{
-au BufNewFile,BufRead *.sp set filetype=sourcepawn
+autocmd! BufNewFile,BufRead *.pde setlocal filetype=arduino
+autocmd! BufNewFile,BufRead *.sp setlocal filetype=sourcepawn
 " }}}
