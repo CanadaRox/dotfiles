@@ -85,7 +85,7 @@ nnoremap <Leader>p :set paste! paste?<CR>
 " {{{
 syntax enable
 set background=dark
-colorscheme crx
+colorscheme wombat256mod
 
 if has("gui_running")
 	if has("win32")
