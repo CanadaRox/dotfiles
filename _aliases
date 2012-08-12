@@ -25,3 +25,5 @@ alias blank='xset dpms force off'
 # super lazy mode
 alias v='vim'
 alias g='git'
+
+export SOURCEMOD=/home/canadarox/dev/sourcemod-pkg/addons/sourcemod
