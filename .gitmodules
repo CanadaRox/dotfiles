@@ -4,3 +4,6 @@
 [submodule "_vim/bundle/tabular"]
 	path = _vim/bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
+[submodule "_vim/bundle/vim-fakeclip"]
+	path = _vim/bundle/vim-fakeclip
+	url = git://github.com/kana/vim-fakeclip.git
