@@ -130,12 +130,6 @@ map <space> /
 map <C-space> ?
 map <silent> <leader><cr> :noh<cr>
 
-" Smart way to move btw. windows
-map <C-n> <C-W>n
-map <C-e> <C-W>e
-map <C-h> <C-W>h
-map <C-i> <C-W>i
-
 " Tab configuration
 map <leader>tn :tabnew<cr>
 map <leader>te :tabedit
