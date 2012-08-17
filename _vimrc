@@ -47,6 +47,8 @@ set hidden "Hide modified buffers (DON'T :q!)
 
 set cursorline "Highlight current line
 
+set guioptions= "Disable all guioptions
+
 "set autochdir "Change dir to active buffer dir
 
 " No sound on errors
