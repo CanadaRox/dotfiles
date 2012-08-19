@@ -1,0 +1,26 @@
+#compdef spcomp
+
+local context state line
+
+_arguments \
+	'*: :_files -g \*sp' \
+	'-a[output assembler code]' \
+	'-A=[alignment in bytes of the data segment and the stack]: :' \
+	'-c=[codepage name or number; e.g. 1252 for Windows Latin-1]: :' \
+	'-e=[set name of error file(quiet compile)]: :_files' \
+	'*-i=[path for include files]: :_directories' \
+	'-l[create list files (preprocess only)]' \
+	'-o=[set base name of (P-code) output file]: :_files' \
+	'-O=[optimization level (default=2)]: :((0\:"no optimization" 2\:"full optimization"))' \
+	'-p=[set name of "prefix" file]: :_files' \
+	'-r=[write cross reference report to console or to specified file]:: :_files' \
+	'-S=[stack/heap size in cells (default=4096)]: :' \
+	'-s=[skip lines from the input file]: :' \
+	'-t=[TAB indent size (in character positions, default=8)]: :' \
+	'-v=[verbosity level (default=1)]: :((0\:quiet 1\:normal 2\:verbose))' \
+	'-w=[disable a specific warning by its number]: :' \
+	'-X=[abstract machine size limit in bytes]: :' \
+	'-XD=[abstract machine data/stack size limit in bytes]: :' \
+	'-\\[use "\" for escape characters]' \
+	'-^[use "^" for escape characters]' \
+	'+-;[require a semicolon to end each statement (default=-;)]' \

@@ -5,6 +5,8 @@ setopt prompt_subst
 
 source ~/.scripts/zsh_prompt/git_info.zsh
 source ~/.scripts/zsh_prompt/hg_info.zsh
+source ~/.env_vars
+source ~/.aliases
 
 #local return_code="%(%{$fg[red]%}%? ↵%{$reset_color%})"
 
@@ -44,8 +46,6 @@ function zle-line-init zle-keymap-select {
 zle -N zle-line-init
 zle -N zle-keymap-select
 
-source ~/.aliases
-
 # colemak binds
 bindkey -M vicmd "n" down-line-or-history
 bindkey -M vicmd "N" vi-join
@@ -67,7 +67,6 @@ bindkey -M vicmd "J" vi-forward-blank-word-end
 # bindkey -M vicmd "TAB" list-choices
 
 export EDITOR=vim
-PATH=$PATH:$HOME/bin:
 
 HISTFILE=~/.histfile
 HISTSIZE=10000
@@ -78,4 +77,5 @@ setopt hist_ignore_dups
 
 zstyle :compinstall filename '/home/canadarox/.zshrc'
 
+fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit
