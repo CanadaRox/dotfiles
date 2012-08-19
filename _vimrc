@@ -30,8 +30,9 @@ set cmdheight=1 "The commandbar height
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
-set ignorecase "Ignore case when searching
-set smartcase
+set gdefault "reverse g function for substitutions
+
+set wildmode=longest,list
 
 set hlsearch "Highlight search things
 
@@ -49,7 +50,10 @@ set cursorline "Highlight current line
 
 set guioptions= "Disable all guioptions
 
-"set autochdir "Change dir to active buffer dir
+set splitbelow "New splits appear below/right
+set splitright
+
+nnoremap Y y$
 
 " No sound on errors
 set noerrorbells
@@ -87,7 +91,8 @@ nnoremap <Leader>p :set paste! paste?<CR>
 " {{{
 syntax enable
 set background=dark
-colorscheme wombat256mod
+"colorscheme wombat256mod
+colorscheme jellybeans
 
 if has("gui_running")
 	if has("win32")
@@ -127,10 +132,11 @@ set number
 
 " => Moving around, tabs and buffers
 " {{{
-" Map space to / (search) and c-space to ? (backgwards search)
-map <space> /
-map <C-space> ?
-map <silent> <leader><cr> :noh<cr>
+" Move through wraps like individual lines
+nmap n gn
+nmap e ge
+
+map <silent> <leader><cr> :nohlsearch<cr>
 
 " Tab configuration
 map <leader>tn :tabnew<cr>
