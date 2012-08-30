@@ -1,7 +1,12 @@
 " => General
 " {{{
 " COLEMAK!!!
-source $HOME/.vim/colemak.vim
+if has("win32") || has("win64")
+	let $VIMFILES="vimfiles"
+else
+	let $VIMFILES=".vim"
+endif
+source $HOME/$VIMFILES/colemak.vim
 " Sets how many lines of history VIM has to remember
 set history=700
 set foldmethod=marker
@@ -114,7 +119,7 @@ set fileformats=unix,dos,mac "Default file types
 
 " => Backups
 " {{{
-set backupdir=~/.vim/backup
+set backupdir=$HOME/$VIMFILES/backup
 " }}}
 
 " => Text, tab and indent related
