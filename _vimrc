@@ -96,8 +96,7 @@ nnoremap <Leader>p :set paste! paste?<CR>
 " {{{
 syntax enable
 set background=dark
-"colorscheme wombat256mod
-colorscheme jellybeans
+colorscheme jbterm
 
 if has("gui_running")
 	if has("win32")
@@ -138,8 +137,8 @@ set number
 " => Moving around, tabs and buffers
 " {{{
 " Move through wraps like individual lines
-nmap n gn
-nmap e ge
+"nmap n gn
+"nmap e ge
 
 map <silent> <leader><cr> :nohlsearch<cr>
 

@@ -1,0 +1,30 @@
+!230
+URxvt*foreground: #ffffdf
+!233
+URxvt*background: #121212
+!153
+URxvt*cursorColor: #afd7ff
+!black 235 59
+*color0: #262626
+*color8: #3a3a3a
+!red 167 209
+*color1: #d75f5f
+*color9: #ff875f
+!green 107 150
+*color2: #87af5f
+*color10: #afd787
+!yellow 179 221
+*color3: #d7af5f
+*color11: #ffd75f
+!blue 68 110
+*color4: #5f87d7
+*color12: #87afd7
+!magenta 133 170
+*color5: #af5faf
+*color13: #d75faf
+!cyan 75 117
+*color6: #5faf55
+*color14: #57d7ff
+!white 253 248
+*color7: #dadada
+*color15: #a8a8a8
