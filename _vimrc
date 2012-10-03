@@ -192,3 +192,9 @@ map <leader>s? z=
 autocmd! BufNewFile,BufRead *.pde setlocal filetype=arduino
 autocmd! BufNewFile,BufRead *.sp setlocal filetype=sourcepawn
 " }}}
+
+" => Random useful mappings
+" {{{
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+"}}}
