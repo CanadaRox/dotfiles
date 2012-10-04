@@ -6,9 +6,13 @@ Just a way to sync all of my critical configurations between mulptiple computers
 
 Using Files
 -----------
-On Linux I create with ln -s and link _file to ~/.file.
-On Windows I source/include/import/etc the repo versions from the normal versions.
+On Linux I create with `ln -s` and link \_file to ~/.file.
+
+On Windows I source/include/import/etc the repo versions from the normal versions (unless it sources other things like my .vimrc, for which I use `mklink /H`).
 
 Screenshots
 -----------
-![vim colorscheme with pastel](https://github.com/CanadaRox/dotfiles/raw/master/screenshots/crxvim.png)
+![vim on putty](https://github.com/CanadaRox/dotfiles/raw/master/screenshots/win_screenshot.png)
+Screenshot taken on Windows 7 in Putty.  Font: DejaVu Sans Mono 11pt.  Vim inside tmux.
+
+No \*nix screenshot currently.  Looks about the same but with Terminus 16 instead (check the \_Xresources!)
