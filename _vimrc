@@ -35,13 +35,13 @@ set cmdheight=1 "The commandbar height
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
-set gdefault "reverse g function for substitutions
-
 set wildmode=longest,list
 
 set hlsearch "Highlight search things
 
 set incsearch "Make search act like search in modern browsers
+set ignorecase "To enable smartcase
+set smartcase "ignorecase unless it has caps
 set lazyredraw "Don't redraw while executing macros 
 
 set magic "Set magic on, for regular expressions
@@ -130,7 +130,8 @@ set softtabstop=4
 
 set autoindent
 set smartindent
-set nowrap
+set wrap
+set linebreak
 set number
 " }}}
 
