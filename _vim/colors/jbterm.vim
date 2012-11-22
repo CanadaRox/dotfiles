@@ -26,11 +26,10 @@ hi Cursor ctermbg=153 guibg=#afff5f
 hi LineNr ctermfg=59 ctermbg=234 guifg=#5f5f5f guibg=#1c1c1c
 hi Comment ctermfg=244 guifg=#808080
 hi Todo cterm=bold ctermbg=none ctermfg=163 gui=bold guifg=#d700af guibg=none
-" TODO
 
 hi StatusLine ctermfg=252 ctermbg=235 guifg=#d0d0d0 guibg=#262626
 hi StatusLineNC ctermfg=235 ctermbg=252 guifg=#262626 guibg=#d0d0d0
-hi VertSplit ctermfg=235 ctermbg=235 guifg=#262626 guibg=#262626
+hi VertSplit cterm=none ctermfg=235 ctermbg=235 guifg=#262626 guibg=#262626
 hi WildMenu ctermfg=217 ctermbg=235 guifg=#ffafaf guibg=#262626
 
 hi Folded ctermfg=145 ctermbg=236 guifg=#afaf5f guibg=#303030
