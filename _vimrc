@@ -103,6 +103,7 @@ nnoremap <Leader>p :set paste!<CR>
 syntax enable
 set background=dark
 colorscheme jbterm
+let g:Powerline_colorscheme = 'skwp'
 
 if has("gui_running")
 	if has("win32")
