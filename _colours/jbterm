@@ -1,9 +1,9 @@
 !230
-URxvt*foreground: #ffffdf
+*foreground: #ffffdf
 !233
-URxvt*background: #121212
+*background: #121212
 !153
-URxvt*cursorColor: #afd7ff
+*cursorColor: #afd7ff
 !black 235 59
 *color0: #262626
 *color8: #3a3a3a
