@@ -15,7 +15,13 @@ set foldmethod=marker
 filetype plugin indent on
 
 " Map leader to ,
-let mapleader = ","
+let mapleader = " "
+
+" Map tab to escape (C-i bro)
+nnoremap <Tab> <Esc>
+vnoremap <Tab> <Esc>gV
+onoremap <Tab> <Esc>
+inoremap <Tab> <Esc>`^
 
 " Load pathogen
 call pathogen#infect()
@@ -69,7 +75,7 @@ set tm=500
 " Show whitespace characters
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set nolist
-nnoremap <Leader>l :set list! list?<CR>
+nnoremap <Leader>l :set list!<CR>
 
 " LaTeX mode
 let g:tex_flavor='latex'
@@ -89,7 +95,7 @@ if has("unix") && v:version >= 703
     set clipboard+=unnamedplus
 endif
 
-nnoremap <Leader>p :set paste! paste?<CR>
+nnoremap <Leader>p :set paste!<CR>
 " }}}
 
 " => Colors and Fonts
@@ -157,22 +163,6 @@ map <leader>cd :cd %:p:h<cr>
 " {{{
 " Always hide the statusline
 set laststatus=2
-
-" Format the statusline
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ \ Line:\ %l/%L:%c
-
-function! CurDir()
-    let curdir = substitute(getcwd(), "/home/canadarox/","~/", "g")
-    return curdir
-endfunction
-
-function! HasPaste()
-    if &paste
-        return 'PASTE MODE  '
-    else
-        return ''
-    endif
-endfunction
 " }}}
 
 " => Spell checking
