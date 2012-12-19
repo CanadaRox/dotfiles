@@ -9,20 +9,27 @@ endif
 set history=700
 set foldmethod=marker
 
-" Enable filetype plugin
-filetype plugin indent on
-
 " Map leader to ,
 let mapleader = " "
 
-" Map tab to escape (C-i bro)
-nnoremap <Tab> <Esc>
-vnoremap <Tab> <Esc>gV
-onoremap <Tab> <Esc>
-inoremap <Tab> <Esc>`^
+" Map jk to escape
+vnoremap jk <Esc>gV
+onoremap jk <Esc>
+inoremap jk <Esc>`^
 
 " Load pathogen
-call pathogen#infect()
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+Bundle 'tpope/vim-fugitive' 
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'godlygeek/tabular'
+Bundle 'kana/vim-fakeclip'
+Bundle 'Lokaltog/vim-powerline'
 " }}}
 
 " => VIM user interface
@@ -189,3 +196,5 @@ autocmd! BufNewFile,BufRead *.sp setlocal filetype=sourcepawn
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 "}}}
+
+filetype plugin indent on
