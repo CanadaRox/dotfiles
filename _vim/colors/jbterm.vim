@@ -7,7 +7,7 @@ endif
 let colors_name = "jbterm""
 
 if version >= 700
-	hi CursorLine cterm=none ctermbg=234 gui=none guibg=#1c1c1c
+	hi CursorLine cterm=none ctermbg=234 guibg=#1c1c1c
 	hi CursorColumn ctermbg=234 guibg=#1c1c1c
 	hi MatchParen cterm=bold ctermfg=231 ctermbg=108 gui=bold guifg=#ffffff guibg=#87af87
 

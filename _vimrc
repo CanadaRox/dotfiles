@@ -1,12 +1,10 @@
 " => General
 " {{{
-" COLEMAK!!!
 if has("win32") || has("win64")
 	let $VIMFILES="vimfiles"
 else
 	let $VIMFILES=".vim"
 endif
-source $HOME/$VIMFILES/colemak.vim
 " Sets how many lines of history VIM has to remember
 set history=700
 set foldmethod=marker

@@ -1,39 +1,16 @@
 #!/bin/zsh
-#autoload -U colors && colors
 autoload colors; colors
 setopt prompt_subst
 
-source ~/.scripts/zsh_prompt/git_info.zsh
-source ~/.scripts/zsh_prompt/hg_info.zsh
 source ~/.env_vars
 source ~/.aliases
 
-#local return_code="%(%{$fg[red]%}%? ↵%{$reset_color%})"
-
-PROMPT="test> "
-#PROMPT='%{$terminfo[bold]$fg[magenta]%}%n%{$reset_color%} @ %{$terminfo[bold]$fg[cyan]%}%m%{$reset_color%} $(hg_prompt_info)$(git_prompt_info)%{$terminfo[bold]$fg[yellow]%}%~ %# %{$reset_color%}'
 PROMPT='%{$terminfo[bold]$fg[magenta]%}%n%{$reset_color%} @ %{$terminfo[bold]$fg[cyan]%}%m%{$reset_color%} %{$terminfo[bold]$fg[yellow]%}%~ %# %{$reset_color%}'
 RPS1="$INSERT_INDICATOR"
 RPS2=$RPS1
 
 INSERT_INDICATOR="%{$fg[magenta]%}<<<%{$reset_color%}"
 COMMAND_INDICATOR="%{$fg[green]%}<<<%{$reset_color%}"
-
-# git theming default: Variables for theming the git info prompt
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[cyan]%}‹"
-ZSH_THEME_GIT_PROMPT_SUFFIX="› %{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="*"              # Text to display if the branch is dirty
-ZSH_THEME_GIT_PROMPT_UNTRACKED="$"
-ZSH_THEME_GIT_PROMPT_AHEAD="+"
-ZSH_THEME_GIT_PROMPT_CLEAN=""               # Text to display if the branch is clean
-
-# hg theming default: Variables for theming the hg info prompt
-ZSH_THEME_HG_PROMPT_PREFIX="%{$fg_bold[cyan]%}‹"
-ZSH_THEME_HG_PROMPT_SUFFIX="› %{$reset_color%}"
-ZSH_THEME_HG_PROMPT_DIRTY="*"              # Text to display if the branch is dirty
-ZSH_THEME_HG_PROMPT_UNTRACKED="$"
-ZSH_THEME_HG_PROMPT_AHEAD="+"
-ZSH_THEME_HG_PROMPT_CLEAN=""               # Text to display if the branch is clean
 
 bindkey -v
 
@@ -45,26 +22,6 @@ function zle-line-init zle-keymap-select {
 
 zle -N zle-line-init
 zle -N zle-keymap-select
-
-# colemak binds
-bindkey -M vicmd "n" down-line-or-history
-bindkey -M vicmd "N" vi-join
-
-bindkey -M vicmd "e" up-line-or-history
-
-bindkey -M vicmd "i" vi-forward-char
-
-bindkey -M vicmd "l" vi-insert
-bindkey -M vicmd "L" vi-insert-bol
-
-bindkey -M vicmd "k" vi-repeat-search
-bindkey -M vicmd "K" vi-rev-repeat-search
-
-bindkey -M vicmd "j" vi-forward-word-end
-bindkey -M vicmd "J" vi-forward-blank-word-end
-
-# I guess it didn't work =(
-# bindkey -M vicmd "TAB" list-choices
 
 export EDITOR=vim
 
