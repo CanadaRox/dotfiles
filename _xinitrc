@@ -19,5 +19,8 @@ xset m 1 1 &
 # start urxvt daemon
 /usr/bin/urxvtd -q -o -f &
 
+# background image
+feh --bg-scale ~/pictures/launch.jpg
+
 #exec dwm
 ~/.scripts/startdwm
