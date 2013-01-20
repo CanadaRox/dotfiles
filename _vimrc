@@ -90,4 +90,4 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 set pastetoggle=<F5>
 
-autocmd! FileType sourcepawn setlocal makeprg=/path/to/spcomp\ %
+autocmd! FileType sourcepawn setlocal makeprg=$SM/scripting/spcomp\ %
