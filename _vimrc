@@ -19,6 +19,11 @@ Bundle 'godlygeek/tabular'
 Bundle 'kana/vim-fakeclip'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'withgod/vim-sourcepawn'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'garbas/vim-snipmate'
+Bundle 'honza/snipmate-snippets'
+Bundle 'sjl/gundo.vim'
 
 filetype plugin indent on
 

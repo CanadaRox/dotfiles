@@ -1,0 +1,31 @@
+snippet semi
+	#pragma semicolon 1${1}
+snippet inc
+	#include <${1:sourcemod}>${2}
+snippet myinfo
+	public Plugin:myinfo =
+	{
+		name = "${1:Name}",
+		author = "${2:Author}",
+		description = "${3}",
+		version = "${4}",
+		url = "${5}"
+	};${6}
+snippet timer
+	public Action:${1:Name_Timer}(Handle:timer)
+	{
+		${2}
+	}
+snippet timerany
+	public Action:${1:Name_Timer}(Handle:timer, any:${2:var})
+	{
+		${3}
+	}
+snippet forclient
+	for (new ${1:client}; $1 < MaxClients; $1++)
+	{
+		if(IsClientInGame(client))
+		{
+			${2}
+		}
+	}
