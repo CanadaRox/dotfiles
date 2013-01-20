@@ -29,31 +29,32 @@ filetype plugin indent on
 
 let g:tex_flavor='latex'
 
-set wildmenu
-set wildmode=longest,list
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
-set showmatch
+set autoindent
+set backupdir=$HOME/$VIMFILES/backup
 set cursorline
+set encoding=utf-8
 set guioptions=
+set hidden
+set hlsearch
+set ignorecase
+set incsearch
+set laststatus=2
+set linebreak
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+set modeline
+set noerrorbells
+set nowrap
+set number
+set shiftwidth=4
+set showmatch
+set smartcase
+set smartindent
+set softtabstop=4
 set splitbelow
 set splitright
-set noerrorbells
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
-set encoding=utf-8
-set backupdir=$HOME/$VIMFILES/backup
-set modeline
-set shiftwidth=4
 set tabstop=4
-set softtabstop=4
-set autoindent
-set smartindent
-set nowrap
-set linebreak
-set number
-set laststatus=2
+set wildmenu
+set wildmode=longest,list
 
 try
 	lang en_CA
