@@ -31,14 +31,15 @@ let g:tex_flavor='latex'
 
 set autoindent
 set backupdir=$HOME/$VIMFILES/backup
+set colorcolumn=80
 set cursorline
 set encoding=utf-8
 set guioptions=
 set hidden
 set hlsearch
-set ignorecase
 set incsearch
 set laststatus=2
+set lazyredraw
 set linebreak
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set modeline
@@ -47,8 +48,8 @@ set nowrap
 set number
 set shiftwidth=4
 set showmatch
-set smartcase
 set smartindent
+set smarttab
 set softtabstop=4
 set splitbelow
 set splitright
