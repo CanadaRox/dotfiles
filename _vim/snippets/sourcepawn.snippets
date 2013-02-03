@@ -22,10 +22,15 @@ snippet timerany
 		${3}
 	}
 snippet forclient
-	for (new ${1:client}; $1 < MaxClients; $1++)
+	for (new ${1:client} = 1; $1 <= MaxClients; $1++)
 	{
 		if(IsClientInGame(client))
 		{
 			${2}
 		}
+	}
+snippet start
+	public OnPluginStart()
+	{
+		${1}
 	}
