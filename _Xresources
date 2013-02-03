@@ -1,10 +1,9 @@
 URxvt.buffered: true
 URxvt.transparent: 0
-URxvt.internalBorder: 8
+URxvt.internalBorder: 4
 URxvt.title: URxvt
 
-!URxvt.font: -*-terminus-medium-r-normal-*-16-*-*-*-*-*-*-*
-URxvt.font: xft:Bitstream Vera Sans Mono:size=10
+URxvt.font: -*-tamsyn-medium-r-normal-*-17-*-*-*-*-*-*-*
 URxvt.scrollBar: false
 
 #include "/home/canadarox/.colours/jbterm"
