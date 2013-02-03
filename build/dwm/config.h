@@ -21,9 +21,11 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            True,        -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 1,       False,       -1 },
+	{ "Tabbed",   NULL,       NULL,       1 << 1,       False,       -1 },
 	{ NULL,       NULL,       "tmux",     1 << 2,       False,       -1 },
 	{ "Thunderbird", NULL,    NULL,       1 << 3,       False,       -1 },
 	{ "Epdfview", NULL,       NULL,       1 << 0,       False,       -1 },
+	{  NULL,      NULL,      "scratchpad",     0,       True,        -1 },
 };
 
 /* layout(s) */
@@ -53,7 +55,8 @@ static const Layout layouts[] = {
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 /* static const char *termcmd[]  = { "urxvtc", NULL }; */
 static const char *termcmd[] = { "urxvtc", "-title", "tmux", "-e", "tmux", NULL };
-static const char *webcmd[] = { "firefox", NULL };
+static const char *webcmd[] = { "firefox", NULL }; 
+//static const char *webcmd[] = { "tabbed", "vimprobable2", "-e", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
