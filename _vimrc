@@ -30,8 +30,8 @@ filetype plugin indent on
 let g:tex_flavor='latex'
 
 set autoindent
+set backup
 set backupdir=$HOME/$VIMFILES/backup
-set colorcolumn=80
 set cursorline
 set encoding=utf-8
 set guioptions=
@@ -65,7 +65,7 @@ endtry
 syntax enable
 set background=dark
 colorscheme jbterm
-let g:Powerline_colorscheme = 'solarized256'
+"let g:Powerline_colorscheme = 'solarized256'
 
 if has("gui_running") && (has("win32") || has("win64"))
 	set guifont=Consolas:h11:cANSI
@@ -80,21 +80,23 @@ cmap <Left> <Nop>
 cmap <Right> <Nop>
 cmap <Down> <Nop>
 
+cnoremap <C-n> <Down>
+cnoremap <C-p> <Up>
 inoremap jk <esc>`^
+nnoremap <C-s> :w<cr>
 nnoremap j gj
 nnoremap k gk
-cnoremap <C-p> <Up>
-cnoremap <C-n> <Down>
 
 let mapleader = " "
 
-nnoremap <silent> <leader><cr> :nohlsearch<cr>
-nnoremap <silent> <leader>l :setlocal list!<cr>
-nnoremap <silent> <leader>w :setlocal wrap!<cr>
-nnoremap <silent> <leader>cd :cd %:p:h<cr>
-nnoremap <silent> <leader>ss :setlocal spell!<cr>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <silent> <leader><cr> :nohlsearch<cr>
+nnoremap <silent> <leader>cd :cd %:p:h<cr>
+nnoremap <silent> <leader>g :GundoToggle<cr>
+nnoremap <silent> <leader>l :setlocal list!<cr>
+nnoremap <silent> <leader>ss :setlocal spell!<cr>
+nnoremap <silent> <leader>w :setlocal wrap!<cr>
 set pastetoggle=<F5>
 
 autocmd! FileType sourcepawn setlocal makeprg=$SM/scripting/spcomp\ %
