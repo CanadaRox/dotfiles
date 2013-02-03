@@ -1,6 +1,6 @@
 #!/bin/zsh
 autoload colors; colors
-setopt prompt_subst
+autoload -z edit-command-line
 
 source ~/.env_vars
 source ~/.aliases
@@ -9,9 +9,12 @@ PROMPT='%{$terminfo[bold]$fg[magenta]%}%n%{$reset_color%} @ %{$terminfo[bold]$fg
 RPS1="$INSERT_INDICATOR"
 RPS2=$RPS1
 
-INSERT_INDICATOR="%{$fg[magenta]%}<<<%{$reset_color%}"
-COMMAND_INDICATOR="%{$fg[green]%}<<<%{$reset_color%}"
+INSERT_INDICATOR="%{$fg[magenta]%}-- INSERT --%{$reset_color%}"
+COMMAND_INDICATOR="%{$fg[green]%}-- NORMAL --%{$reset_color%}"
 
+bindkey -M vicmd '^i' edit-command-line
+bindkey -M viins '^R' history-incremental-search-backward
+bindkey -M viins 'jk' vi-cmd-mode
 bindkey -v
 
 function zle-line-init zle-keymap-select {
@@ -20,19 +23,48 @@ function zle-line-init zle-keymap-select {
 	zle reset-prompt
 }
 
-zle -N zle-line-init
 zle -N zle-keymap-select
+zle -N zle-line-init
+zle -N edit-command-line
 
 export EDITOR=vim
+export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 scrolloff=999 nomod nolist nonu noma' -\""
 
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
+
 setopt appendhistory
+setopt autocd
 setopt extendedglob
 setopt hist_ignore_dups
+setopt noflowcontrol
+setopt prompt_subst
+
+stty stop undef
+stty start undef
 
 zstyle :compinstall filename '/home/canadarox/.zshrc'
 
 fpath=(~/.zsh/completion $fpath)
-autoload -Uz compinit && compinit
+
+function chpwd { ls }
+
+# The following lines were added by compinstall
+zstyle ':completion:*' completer _expand _complete _ignored
+zstyle ':completion:*' expand prefix suffix
+zstyle ':completion:*' file-sort name
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' insert-unambiguous false
+zstyle ':completion:*' list-colors no=00 fi=00 di=01\;34 pi=33 so=01\;35 bd=00\;35 cd=00\;34 or=00\;41 mi=00\;45 ex=01\;32
+zstyle ':completion:*' list-prompt '%SAt %p: Hit TAB for more, or the character to insert%s'
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
+zstyle ':completion:*' menu select=0
+zstyle ':completion:*' preserve-prefix '//[^/]##/'
+zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
+zstyle ':completion:*' verbose true
+zstyle :compinstall filename '/home/canadarox/z'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
