@@ -1,1 +1,2 @@
 map <C-j> :downloads<cr>
+set editor='urxvt -title scratchpad -geometry 86x24+40+60 -e vim <file>'
