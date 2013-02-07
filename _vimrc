@@ -16,7 +16,6 @@ Bundle 'tpope/vim-pastie'
 Bundle 'tpope/vim-surround'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'godlygeek/tabular'
-Bundle 'kana/vim-fakeclip'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'withgod/vim-sourcepawn'
 Bundle 'MarcWeber/vim-addon-mw-utils'
@@ -24,6 +23,7 @@ Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
 Bundle 'honza/snipmate-snippets'
 Bundle 'sjl/gundo.vim'
+Bundle 'tpope/vim-unimpaired'
 
 filetype plugin indent on
 
@@ -97,6 +97,7 @@ nnoremap <silent> <leader>g :GundoToggle<cr>
 nnoremap <silent> <leader>l :setlocal list!<cr>
 nnoremap <silent> <leader>ss :setlocal spell!<cr>
 nnoremap <silent> <leader>w :setlocal wrap!<cr>
+
 set pastetoggle=<F5>
 
 autocmd! FileType sourcepawn setlocal makeprg=$SM/scripting/spcomp\ %
