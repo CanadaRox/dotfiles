@@ -51,19 +51,21 @@ fpath=(~/.zsh/completion $fpath)
 function chpwd { ls }
 
 # The following lines were added by compinstall
+
 zstyle ':completion:*' completer _expand _complete _ignored
 zstyle ':completion:*' expand prefix suffix
 zstyle ':completion:*' file-sort name
 zstyle ':completion:*' group-name ''
-zstyle ':completion:*' insert-unambiguous false
+zstyle ':completion:*' ignore-parents parent pwd
+zstyle ':completion:*' insert-unambiguous true
 zstyle ':completion:*' list-colors no=00 fi=00 di=01\;34 pi=33 so=01\;35 bd=00\;35 cd=00\;34 or=00\;41 mi=00\;45 ex=01\;32
 zstyle ':completion:*' list-prompt '%SAt %p: Hit TAB for more, or the character to insert%s'
-zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'l:|=* r:|=*' 'r:|[._-]=** r:|=**'
 zstyle ':completion:*' menu select=0
-zstyle ':completion:*' preserve-prefix '//[^/]##/'
+zstyle ':completion:*' original true
 zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
 zstyle ':completion:*' verbose true
-zstyle :compinstall filename '/home/canadarox/z'
+zstyle :compinstall filename '/home/canadarox/.zshrc'
 
 autoload -Uz compinit
 compinit
