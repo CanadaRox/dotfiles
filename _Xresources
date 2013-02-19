@@ -2,8 +2,17 @@ URxvt.buffered: true
 URxvt.transparent: 0
 URxvt.internalBorder: 4
 URxvt.title: URxvt
+URxvt.saveLines: 0
 
-URxvt.font: -*-tamsyn-medium-r-normal-*-17-*-*-*-*-*-*-*
+URxvt.font: xft:DejaVu Sans Mono:size=10
+URxvt.intensityStyles: ture
 URxvt.scrollBar: false
+
+
+URxvt.perl-ext-common: default,matcher
+URxvt.matcher.button: 1
+URxvt.urlLauncher: firefox
+
+URxvt.cursorBlink: true
 
 #include "/home/canadarox/.colours/jbterm"

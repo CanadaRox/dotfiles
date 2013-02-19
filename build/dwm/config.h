@@ -54,7 +54,7 @@ static const Layout layouts[] = {
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 /* static const char *termcmd[]  = { "urxvtc", NULL }; */
-static const char *termcmd[] = { "urxvtc", "-title", "tmux", "-e", "tmux", NULL };
+static const char *termcmd[] = { "urxvtc", "-title", "tmux", "-e", "tmux", "attach", NULL };
 static const char *webcmd[] = { "firefox", NULL }; 
 //static const char *webcmd[] = { "tabbed", "vimprobable2", "-e", NULL };
 
