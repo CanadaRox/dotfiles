@@ -1,2 +1,2 @@
 map <C-j> :downloads<cr>
-set editor='urxvt -title scratchpad -geometry 86x24+40+60 -e vim +<line> +"sil! call cursor(0, <column>)" <file>'
+set editor='urxvt -title scratchpad -geometry 86x24+40+60 -e vim <file>'
