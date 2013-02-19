@@ -38,6 +38,7 @@ setopt appendhistory
 setopt autocd
 setopt extendedglob
 setopt hist_ignore_dups
+setopt histignorespace
 setopt noflowcontrol
 setopt prompt_subst
 
