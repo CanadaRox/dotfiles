@@ -83,7 +83,7 @@ cmap <Down> <Nop>
 cnoremap <C-n> <Down>
 cnoremap <C-p> <Up>
 inoremap jk <esc>`^
-nnoremap <C-s> :w<cr>
+nnoremap <C-s> :update<cr>
 nnoremap j gj
 nnoremap k gk
 
@@ -100,4 +100,10 @@ nnoremap <silent> <leader>w :setlocal wrap!<cr>
 
 set pastetoggle=<F5>
 
-autocmd! FileType sourcepawn setlocal makeprg=$SM/scripting/spcomp\ %
+augroup sourcepawn
+	autocmd!
+	autocmd FileType sourcepawn setlocal makeprg=$SM/scripting/spcomp\ %
+	autocmd FileType sourcepawn setlocal path+=$SM/scripting/include
+	autocmd FileType sourcepawn setlocal suffixesadd+=.sp,.inc
+	autocmd FileType sourcepawn setlocal tags+=$SM/scripting/include/tags
+augroup END
