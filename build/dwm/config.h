@@ -25,7 +25,8 @@ static const Rule rules[] = {
 	{ NULL,       NULL,       "tmux",     1 << 2,       False,       -1 },
 	{ "Thunderbird", NULL,    NULL,       1 << 3,       False,       -1 },
 	{ "Epdfview", NULL,       NULL,       1 << 0,       False,       -1 },
-	{  NULL,      NULL,      "scratchpad",     0,       True,        -1 },
+	{  NULL,      NULL,       "scratchpad",    0,       True,        -1 },
+	{ "Steam",    NULL,       NULL,       1 << 4,       True,        -1 },
 };
 
 /* layout(s) */
