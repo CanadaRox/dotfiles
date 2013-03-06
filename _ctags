@@ -1,6 +1,6 @@
 --langdef=sourcepawn
 --langmap=sourcepawn:.sp
---regex-sourcepawn=/^(\b\w+\b[ \t]+|[ \t])?(\b\w+\b:)?([a-zA-Z0-9\-_]+)\(.*\)/\3/f,function/
+--regex-sourcepawn=/^(\b\w+\b[ \t]+|[ \t])?(\b\w+\b:)?([a-zA-Z0-9\-_]+)\(.*/\3/f,function/
 --regex-sourcepawn=/^#define[ \t]+([^_][a-zA-Z0-9\-_]+).+/\1/d,macro/
 --regex-sourcepawn=/^enum[ \t]+([a-zA-Z0-9\-_]+)/\1/e,enum/
 --regex-sourcepawn=/^[ \t]+([a-zA-Z][a-zA-Z0-9\-_]*)([ \t]?=[ \t]?[0-9]+)?,/\1/e,enum/
