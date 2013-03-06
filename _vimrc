@@ -24,6 +24,7 @@ Bundle 'garbas/vim-snipmate'
 Bundle 'honza/snipmate-snippets'
 Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-unimpaired'
+Bundle 'mattn/gist-vim'
 
 filetype plugin indent on
 
@@ -32,6 +33,7 @@ let g:tex_flavor='latex'
 set autoindent
 set backup
 set backupdir=$HOME/$VIMFILES/backup
+set completeopt=longest,menu,preview
 set cursorline
 set encoding=utf-8
 set guioptions=
