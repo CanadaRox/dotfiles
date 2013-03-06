@@ -24,9 +24,9 @@ snippet timerany
 snippet forclient
 	for (new ${1:client} = 1; $1 <= MaxClients; $1++)
 	{
-		if(IsClientInGame(client))
+		if(IsClientInGame($1)${2})
 		{
-			${2}
+			${3}
 		}
 	}
 snippet start
