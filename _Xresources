@@ -15,4 +15,4 @@ URxvt.urlLauncher: firefox
 
 URxvt.cursorBlink: true
 
-#include "/home/canadarox/.colours/jbterm"
+#include "/home/canadarox/.colours/Ivory_Light"

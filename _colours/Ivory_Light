@@ -1,0 +1,37 @@
+! https://bbs.archlinux.org/viewtopic.php?id=51818&p=11
+*background:  #FFFFFF
+*foreground:  #000000
+
+*cursorColor: #007693
+
+! BLACK
+*color0:      #C4C4C4
+*color8:      #B3B3B3
+
+! WHITE
+*color7:      #4D4D4D
+*color15:     #363636
+
+! RED
+*color1:      #E75C58
+*color9:      #B22B31
+
+! YELLOW
+*color3:      #A08A00
+*color11:     #715F00
+
+! GREEN
+*color2:      #00A250
+*color10:     #007427
+
+! CYAN
+*color6:      #00A4C1
+*color14:     #007693
+
+! BLUE
+*color4:      #208FFB
+*color12:     #0065CA
+
+! MAGENTA
+*color5:      #D160C4
+*color13:     #A03196

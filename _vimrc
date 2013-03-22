@@ -15,6 +15,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-pastie'
 Bundle 'tpope/vim-surround'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdtree'
 Bundle 'godlygeek/tabular'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'withgod/vim-sourcepawn'
@@ -25,6 +26,11 @@ Bundle 'honza/snipmate-snippets'
 Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'mattn/gist-vim'
+Bundle 'noahfrederick/Hemisu'
+Bundle 'rosstimson/scala-vim-support'
+Bundle 'kien/ctrlp.vim'
+Bundle 'vim-scripts/matchit.zip'
+Bundle 'lukerandall/haskellmode-vim'
 
 filetype plugin indent on
 
@@ -39,6 +45,7 @@ set encoding=utf-8
 set guioptions=
 set hidden
 set hlsearch
+set ignorecase
 set incsearch
 set laststatus=2
 set lazyredraw
@@ -50,6 +57,7 @@ set nowrap
 set number
 set shiftwidth=4
 set showmatch
+set smartcase
 set smartindent
 set smarttab
 set softtabstop=4
@@ -58,6 +66,7 @@ set splitright
 set tabstop=4
 set wildmenu
 set wildmode=longest,list
+set wildignore+=*.smx,*.swp,*.so,*.o,*.swp
 
 try
 	lang en_CA
@@ -65,8 +74,8 @@ catch
 endtry
 
 syntax enable
-set background=dark
-colorscheme jbterm
+set background=light
+colorscheme hemisu
 "let g:Powerline_colorscheme = 'solarized256'
 
 if has("gui_running") && (has("win32") || has("win64"))
@@ -88,17 +97,20 @@ inoremap jk <esc>`^
 nnoremap <C-s> :update<cr>
 nnoremap j gj
 nnoremap k gk
+nnoremap Y y$
 
 let mapleader = " "
 
+nnoremap <leader><cr> :nohlsearch<cr>
+nnoremap <leader>cd :cd %:p:h<cr>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>g :GundoToggle<cr>
+nnoremap <leader>l :setlocal list! list?<cr>
+nnoremap <leader>m :make<cr>
+nnoremap <leader>ss :setlocal spell! spell?<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
-nnoremap <silent> <leader><cr> :nohlsearch<cr>
-nnoremap <silent> <leader>cd :cd %:p:h<cr>
-nnoremap <silent> <leader>g :GundoToggle<cr>
-nnoremap <silent> <leader>l :setlocal list!<cr>
-nnoremap <silent> <leader>ss :setlocal spell!<cr>
-nnoremap <silent> <leader>w :setlocal wrap!<cr>
+nnoremap <leader>tr :NERDTreeToggle<cr>
+nnoremap <leader>w :setlocal wrap! wrap?<cr>
 
 set pastetoggle=<F5>
 
@@ -108,4 +120,10 @@ augroup sourcepawn
 	autocmd FileType sourcepawn setlocal path+=$SM/scripting/include
 	autocmd FileType sourcepawn setlocal suffixesadd+=.sp,.inc
 	autocmd FileType sourcepawn setlocal tags+=$SM/scripting/include/tags
+augroup END
+
+augroup latex
+	autocmd!
+	autocmd FileType tex setlocal makeprg=pdflatex\ \-file\-line\-error\ \-interaction=nonstopmode\ %
+	autocmd FileType text setlocal errorformat=%f:%l:\ %m
 augroup END
