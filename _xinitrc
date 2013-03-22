@@ -24,7 +24,7 @@ xset m 1 1 &
 /usr/bin/urxvtd -q -o -f &
 
 # background image
-feh --bg-scale ~/pictures/launch.jpg
+feh --bg-scale ~/pictures/blue.jpg
 
 #exec dwm
 ~/.scripts/startdwm
