@@ -1,3 +1,0 @@
-#session1
-new-window -t 8 -n mutt mutt
-new-window -t 9 -n irssi irssi

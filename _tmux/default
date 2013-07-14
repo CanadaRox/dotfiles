@@ -1,0 +1,6 @@
+#session1
+new-window -t 7 -n gmail "mutt -F ~/.mutt/gmail_muttrc"
+new-window -t 8 -n ryerson "mutt -F ~/.mutt/ryerson_muttrc"
+new-window -t 9 -n irssi irssi
+
+# vim: ft=tmux
