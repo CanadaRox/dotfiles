@@ -3,6 +3,7 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias tmux='tmux -u'
+alias t='python2 ~/build/t/t.py --task-dir ~/tasks --list tasks'
 
 alias ..='cd ..'
 alias ....='cd ../..'
@@ -12,6 +13,9 @@ alias ls='ls --color=auto -F'
 alias ll='ls -l'
 alias la='ls -A'
 alias lla='ls -lAh'
+
+alias rmail='mutt -F ~/.mutt/ryerson_muttrc'
+alias gmail='mutt -F ~/.mutt/gmail_muttrc'
 
 alias blank='xset dpms force off'
 
