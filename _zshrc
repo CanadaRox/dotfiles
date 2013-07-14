@@ -2,7 +2,12 @@
 autoload colors; colors
 autoload -z edit-command-line
 
-source ~/.env_vars
+if [[ -f ~/.env_vars ]]
+then
+	source ~/.env_vars
+else
+	touch ~/.env_vars
+fi
 source ~/.aliases
 
 PROMPT='%{$terminfo[bold]$fg[magenta]%}%n%{$reset_color%} @ %{$terminfo[bold]$fg[cyan]%}%m%{$reset_color%} %{$terminfo[bold]$fg[yellow]%}%~ %# %{$reset_color%}'
