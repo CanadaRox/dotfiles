@@ -22,15 +22,13 @@ Bundle 'withgod/vim-sourcepawn'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
-Bundle 'honza/snipmate-snippets'
+Bundle 'honza/vim-snippets'
 Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'mattn/gist-vim'
 Bundle 'noahfrederick/Hemisu'
-Bundle 'rosstimson/scala-vim-support'
 Bundle 'kien/ctrlp.vim'
 Bundle 'vim-scripts/matchit.zip'
-Bundle 'lukerandall/haskellmode-vim'
 
 filetype plugin indent on
 
@@ -63,10 +61,11 @@ set smarttab
 set softtabstop=4
 set splitbelow
 set splitright
+set switchbuf=useopen,usetab
 set tabstop=4
+set wildignore+=*.smx,*.swp,*.so,*.o,*.swp
 set wildmenu
 set wildmode=longest,list
-set wildignore+=*.smx,*.swp,*.so,*.o,*.swp
 
 try
 	lang en_CA
@@ -111,6 +110,9 @@ nnoremap <leader>ss :setlocal spell! spell?<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>tr :NERDTreeToggle<cr>
 nnoremap <leader>w :setlocal wrap! wrap?<cr>
+nnoremap <leader>pp :CtrlP<cr>
+nnoremap <leader>pb :CtrlPBuffer<cr>
+nnoremap <leader>pl :CtrlPLine<cr>
 
 set pastetoggle=<F5>
 
