@@ -2,7 +2,7 @@
 
 /* appearance */
 //static const char font[]            = "-*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*";
-static const char font[]            = "Bitstream Vera Sans Mono 10";
+static const char font[]            = "Bitstream Vera Sans Mono:size=10";
 static const char normbordercolor[] = "#C4C4C4";
 static const char normbgcolor[]     = "#FFFFFF";
 static const char normfgcolor[]     = "#000000";
@@ -11,22 +11,23 @@ static const char selbgcolor[]      = "#007693";
 static const char selfgcolor[]      = "#FFFFFF";
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
+//static const unsigned int gappx     = 4;
 static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
 /* tagging */
-static const char *tags[] = { "other", "web", "term", "mail", "steam" };
+static const char *tags[] = { "other", "web", "term", "steam" };
 
 static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            True,        -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 1,       False,       -1 },
+	{ "Chromium", NULL,       NULL,       1 << 1,       False,       -1 },
 	{ "Tabbed",   NULL,       NULL,       1 << 1,       False,       -1 },
 	{ NULL,       NULL,       "tmux",     1 << 2,       False,       -1 },
-	{ "Thunderbird", NULL,    NULL,       1 << 3,       False,       -1 },
 	{ "Epdfview", NULL,       NULL,       1 << 0,       False,       -1 },
-	{  NULL,      NULL,       "scratchpad",    0,       True,        -1 },
-	{ "Steam",    NULL,       NULL,       1 << 4,       True,        -1 },
+	{ NULL,       NULL,       "scratchpad",    0,       True,        -1 },
+	{ "Steam",    NULL,       NULL,       1 << 3,       True,        -1 },
 };
 
 /* layout(s) */
