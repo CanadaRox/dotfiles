@@ -29,8 +29,24 @@ snippet forclient
 			${3}
 		}
 	}
-snippet start
+snippet pluginstart
 	public OnPluginStart()
 	{
 		${1}
+	}
+snippet mapstart
+	public OnMapStart()
+	{
+		${1}
+	}
+snippet eventcallback
+	public ${1:Name_Event}(Handle:event, const String:name[], bool:dontBroadcast)
+	{
+		${2}
+	}
+snippet cmdcallback
+	public Action:${1:Name_Cmd}(client, args)
+	{
+		${2}
+		return Plugin_Handled;
 	}
