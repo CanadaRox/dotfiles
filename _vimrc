@@ -25,18 +25,18 @@ Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
 Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-unimpaired'
+Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 Bundle 'noahfrederick/Hemisu'
 Bundle 'kien/ctrlp.vim'
 Bundle 'vim-scripts/matchit.zip'
+Bundle 'Townk/vim-autoclose'
 
 filetype plugin indent on
 
 let g:tex_flavor='latex'
 
 set autoindent
-set backup
-set backupdir=$HOME/$VIMFILES/backup
 set completeopt=longest,menu,preview
 set cursorline
 set encoding=utf-8
@@ -66,6 +66,12 @@ set tabstop=4
 set wildignore+=*.smx,*.swp,*.so,*.o,*.swp
 set wildmenu
 set wildmode=longest,list
+
+set backup
+set backupdir=$HOME/$VIMFILES/backup
+set undodir=$HOME/$VIMFILES/undo
+set undofile
+
 
 try
 	lang en_CA
@@ -113,6 +119,7 @@ nnoremap <leader>w :setlocal wrap! wrap?<cr>
 nnoremap <leader>pp :CtrlP<cr>
 nnoremap <leader>pb :CtrlPBuffer<cr>
 nnoremap <leader>pl :CtrlPLine<cr>
+nnoremap <leader>pm :CtrlPMRUFiles<cr>
 
 set pastetoggle=<F5>
 
