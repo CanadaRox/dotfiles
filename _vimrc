@@ -1,4 +1,71 @@
-filetype off
+"Vundle
+if has('vim_starting')
+  set nocompatible               " Be iMproved
+
+  " Required:
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+" Required:
+call neobundle#begin(expand('~/.vim/bundle'))
+
+" Let NeoBundle manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+"Language Support
+NeoBundle 'withgod/vim-sourcepawn'
+NeoBundle 'digitaltoad/vim-jade'
+NeoBundle 'groenewege/vim-less'
+
+"Beautify
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline_theme='tomorrow'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'noahfrederick/Hemisu'
+
+"Extra Features
+NeoBundle 'ciaranm/detectindent'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-eunuch'
+NeoBundle 'tpope/vim-unimpaired'
+NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'junegunn/vim-easy-align'
+NeoBundle 'sirver/UltiSnips'
+NeoBundle 'honza/vim-snippets'
+NeoBundle 'sjl/gundo.vim'
+
+let g:ctrlp_custom_ignore = {
+			\ 'dir': 'node_modules$'
+			\ }
+let g:ctrlp_user_command = {
+			\ 'types': {
+				\ 1: ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others'],
+				\ 2: ['.hg', 'hg --cwd %s locate -I .'],
+			\ },
+			\ 'fallback': 'find %s -type f'
+		\ }
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'vim-scripts/matchit.zip'
+NeoBundle 'chilicuil/vim-sprunge'
+NeoBundle 'krisajenkins/vim-projectlocal'
+
+let g:syntastic_check_on_open = 0
+let g:syntastic_loc_list_height = 5
+NeoBundle 'scrooloose/syntastic'
+
+" Required:
+call neobundle#end()
+
+" Required:
+filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
+"End NeoBundle Scripts-------------------------
 
 if has("win32") || has("win64")
 	let $VIMFILES="vimfiles"
@@ -6,40 +73,14 @@ else
 	let $VIMFILES=".vim"
 endif
 
-"Vundle
-set runtimepath+=~/.vim/bundle/vundle/
-call vundle#rc()
+let g:tex_flavor = 'latex'
 
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-fugitive' 
-Bundle 'tpope/vim-pastie'
-Bundle 'tpope/vim-surround'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
-Bundle 'godlygeek/tabular'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'withgod/vim-sourcepawn'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'garbas/vim-snipmate'
-Bundle 'honza/vim-snippets'
-Bundle 'sjl/gundo.vim'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'mattn/webapi-vim'
-Bundle 'mattn/gist-vim'
-Bundle 'noahfrederick/Hemisu'
-Bundle 'kien/ctrlp.vim'
-Bundle 'vim-scripts/matchit.zip'
-Bundle 'Townk/vim-autoclose'
-
-filetype plugin indent on
-
-let g:tex_flavor='latex'
-
-set autoindent
-set completeopt=longest,menu,preview
+set autochdir
+set completeopt=menu,longest,preview
 set cursorline
 set encoding=utf-8
+set expandtab
+set foldmethod=marker
 set guioptions=
 set hidden
 set hlsearch
@@ -48,21 +89,20 @@ set incsearch
 set laststatus=2
 set lazyredraw
 set linebreak
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+set listchars=eol:↵,tab:»·,trail:·,extends:>,precedes:<
 set modeline
 set noerrorbells
 set nowrap
 set number
-set shiftwidth=4
+set shiftwidth=2
 set showmatch
 set smartcase
-set smartindent
 set smarttab
-set softtabstop=4
 set splitbelow
 set splitright
 set switchbuf=useopen,usetab
-set tabstop=4
+set tabstop=2
+set virtualedit=block
 set wildignore+=*.smx,*.swp,*.so,*.o,*.swp
 set wildmenu
 set wildmode=longest,list
@@ -72,16 +112,10 @@ set backupdir=$HOME/$VIMFILES/backup
 set undodir=$HOME/$VIMFILES/undo
 set undofile
 
-
-try
-	lang en_CA
-catch
-endtry
-
 syntax enable
 set background=light
 colorscheme hemisu
-"let g:Powerline_colorscheme = 'solarized256'
+
 
 if has("gui_running") && (has("win32") || has("win64"))
 	set guifont=Consolas:h11:cANSI
@@ -96,8 +130,8 @@ cmap <Left> <Nop>
 cmap <Right> <Nop>
 cmap <Down> <Nop>
 
-cnoremap <C-n> <Down>
-cnoremap <C-p> <Up>
+cnoremap <C-j> <Down>
+cnoremap <C-k> <Up>
 inoremap jk <esc>`^
 nnoremap <C-s> :update<cr>
 nnoremap j gj
@@ -106,22 +140,19 @@ nnoremap Y y$
 
 let mapleader = " "
 
-nnoremap <leader><cr> :nohlsearch<cr>
 nnoremap <leader>cd :cd %:p:h<cr>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>g :GundoToggle<cr>
-nnoremap <leader>l :setlocal list! list?<cr>
 nnoremap <leader>m :make<cr>
-nnoremap <leader>ss :setlocal spell! spell?<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
-nnoremap <leader>tr :NERDTreeToggle<cr>
-nnoremap <leader>w :setlocal wrap! wrap?<cr>
 nnoremap <leader>pp :CtrlP<cr>
 nnoremap <leader>pb :CtrlPBuffer<cr>
 nnoremap <leader>pl :CtrlPLine<cr>
 nnoremap <leader>pm :CtrlPMRUFiles<cr>
+nnoremap <leader>er :Errors<cr>
+nnoremap <F5> :make<cr>
 
-set pastetoggle=<F5>
+set pastetoggle=<F7>
 
 augroup sourcepawn
 	autocmd!
@@ -135,4 +166,9 @@ augroup latex
 	autocmd!
 	autocmd FileType tex setlocal makeprg=pdflatex\ \-file\-line\-error\ \-interaction=nonstopmode\ %
 	autocmd FileType text setlocal errorformat=%f:%l:\ %m
+augroup END
+
+augroup detectindent
+	autocmd!
+	autocmd BufRead * DetectIndent
 augroup END

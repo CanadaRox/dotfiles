@@ -4,6 +4,7 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias tmux='tmux -u'
 alias t='python2 ~/build/t/t.py --task-dir ~/tasks --list tasks'
+alias sprunge='curl -F "sprunge=<-" http://sprunge.us'
 
 alias ..='cd ..'
 alias ....='cd ../..'

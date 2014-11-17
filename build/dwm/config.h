@@ -1,8 +1,8 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-//static const char font[]            = "-*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*";
-static const char font[]            = "Bitstream Vera Sans Mono:size=10";
+static const char font[]            = "-*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*";
+//static const char font[]            = "Bitstream Vera Sans Mono:size=10";
 static const char normbordercolor[] = "#C4C4C4";
 static const char normbgcolor[]     = "#FFFFFF";
 static const char normfgcolor[]     = "#000000";
@@ -57,7 +57,7 @@ static const Layout layouts[] = {
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 /* static const char *termcmd[]  = { "urxvtc", NULL }; */
 static const char *termcmd[] = { "urxvtc", "-title", "tmux", "-e", "tmux", "attach", NULL };
-static const char *webcmd[] = { "firefox", NULL }; 
+static const char *webcmd[] = { "firefox", NULL };
 //static const char *webcmd[] = { "tabbed", "vimprobable2", "-e", NULL };
 
 static Key keys[] = {

@@ -2,12 +2,11 @@
 # load colours and magic
 xrdb -merge ~/.Xresources
 
-# one clipboard to rule them all
-autocutsel -fork &
-autocutsel -selection PRIMARY -fork &
+# Media keys
+xbindkeys
 
 # add terminus to font path
-xset +fp /usr/share/fonts/local 
+xset +fp /usr/share/fonts/local
 xset fp rehash &
 
 # disable mouse when typing
@@ -24,7 +23,7 @@ xset m 1 1 &
 /usr/bin/urxvtd -q -o -f &
 
 # background image
-feh --bg-scale ~/pictures/arch_laptop
+feh --bg-scale ~/pictures/wallpapers/nubula.jpg
 
 # redshift
 redshift -l 43.67:-79.4 &
@@ -39,5 +38,8 @@ export GPG_AGENT_INFO
 export GNOME_KEYRING_CONTROL
 export GNOME_KEYRING_PID
 
+compton -bc --vsync drm
+
 #exec dwm
 ~/.scripts/startdwm
+#exec openbox

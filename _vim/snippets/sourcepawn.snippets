@@ -21,13 +21,10 @@ snippet timerany
 	{
 		${3}
 	}
-snippet forclient
-	for (new ${1:client} = 1; $1 <= MaxClients; $1++)
+snippet for
+	for (${1:new }${2:i} = ${3:0}; ${4:$2 < 10}; $2${5:++})
 	{
-		if(IsClientInGame($1)${2})
-		{
-			${3}
-		}
+		${6}
 	}
 snippet pluginstart
 	public OnPluginStart()

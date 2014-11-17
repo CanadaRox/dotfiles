@@ -1,10 +1,10 @@
-"mpc toggle"
+"mocp --toggle-pause"
 XF86AudioPlay
 
-"mpc next"
+"mocp --next"
 XF86AudioNext
 
-"mpc prev"
+"mocp --previous"
 XF86AudioPrev
 
 "dvol -i 2"

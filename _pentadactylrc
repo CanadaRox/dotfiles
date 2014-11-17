@@ -1,2 +1,9 @@
-map <C-j> :downloads<cr>
-set editor='urxvt -title scratchpad -geometry 86x24+40+60 -e vim <file>'
+set editor='urxvt -name scratchpad -geometry 86x24+40+60 -e vim <file>'
+set defsearch='duckduckgo'
+set guioptions=Csn
+set scrolltime=0
+set hlfind
+set passkeys+=mail.google.com:jksacrqG#<CR>,gi,gl,gp
+set strictfocus=google.com:laissez-faire,'chrome:*':laissez-faire,*:despotic
+
+" vim: ft=pentadactylrc
